@@ -1,0 +1,22 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=2]
+
+[sub_resource type="Shader" id=1]
+code = "shader_type canvas_item;
+
+uniform bool greyscale = true;
+
+void fragment() {
+	if (greyscale == true) {
+		float red = COLOR.x;
+		float blue = COLOR.y;
+		float green = COLOR.z;
+		float alpha = COLOR.a;
+		float average_value = (red+blue+green)/3.0;
+		vec4 final_color = vec4(average_value, average_value, average_value, alpha);
+		COLOR = final_color;
+	}
+}"
+
+[resource]
+shader = SubResource( 1 )
+shader_param/greyscale = true
