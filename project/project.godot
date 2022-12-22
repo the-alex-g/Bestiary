@@ -8,15 +8,37 @@
 
 config_version=4
 
-_global_script_classes=[  ]
+_global_script_classes=[ {
+"base": "VBoxContainer",
+"class": "Field",
+"language": "GDScript",
+"path": "res://Field/Field.gd"
+}, {
+"base": "HBoxContainer",
+"class": "FieldItem",
+"language": "GDScript",
+"path": "res://Field/FieldItem.gd"
+}, {
+"base": "ScrollContainer",
+"class": "Page",
+"language": "GDScript",
+"path": "res://Page/Page.gd"
+}, {
+"base": "TextureButton",
+"class": "RemoveButton",
+"language": "GDScript",
+"path": "res://Buttons/RemoveButton.gd"
+} ]
 _global_script_class_icons={
-
+"Field": "",
+"FieldItem": "",
+"Page": "",
+"RemoveButton": ""
 }
 
 [application]
 
 config/name="NewProject"
-config/icon="res://icon.png"
 
 [display]
 
