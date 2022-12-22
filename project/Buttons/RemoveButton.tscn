@@ -1,0 +1,18 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Buttons/RemoveButton.gd" type="Script" id=1]
+[ext_resource path="res://Buttons/Atlases/RemoveNormal.tres" type="Texture" id=2]
+[ext_resource path="res://Buttons/Atlases/RemovePressed.tres" type="Texture" id=3]
+[ext_resource path="res://Buttons/Atlases/RemoveHover.tres" type="Texture" id=4]
+[ext_resource path="res://Buttons/Atlases/RemoveDisabled.tres" type="Texture" id=5]
+
+[node name="RemoveButton" type="TextureButton"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture_normal = ExtResource( 2 )
+texture_pressed = ExtResource( 3 )
+texture_hover = ExtResource( 4 )
+texture_disabled = ExtResource( 5 )
+script = ExtResource( 1 )
+
+[connection signal="pressed" from="." to="." method="_on_RemoveButton_pressed"]

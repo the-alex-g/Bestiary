@@ -1,0 +1,155 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Field/StatField.gd" type="Script" id=1]
+
+[node name="StatField" type="GridContainer"]
+margin_right = 40.0
+margin_bottom = 40.0
+columns = 3
+script = ExtResource( 1 )
+
+[node name="Stat" type="Label" parent="."]
+margin_right = 24.0
+margin_bottom = 14.0
+text = "Stat"
+align = 1
+
+[node name="Base" type="Label" parent="."]
+margin_left = 28.0
+margin_right = 86.0
+margin_bottom = 14.0
+text = "Base"
+align = 1
+
+[node name="Bonus" type="Label" parent="."]
+margin_left = 90.0
+margin_right = 148.0
+margin_bottom = 14.0
+text = "Bonus"
+align = 1
+
+[node name="Ag" type="Label" parent="."]
+margin_top = 23.0
+margin_right = 24.0
+margin_bottom = 37.0
+text = "Ag"
+align = 1
+
+[node name="AgBase" type="LineEdit" parent="."]
+margin_left = 28.0
+margin_top = 18.0
+margin_right = 86.0
+margin_bottom = 42.0
+max_length = 2
+
+[node name="AgBonus" type="LineEdit" parent="."]
+margin_left = 90.0
+margin_top = 18.0
+margin_right = 148.0
+margin_bottom = 42.0
+max_length = 3
+
+[node name="Cn" type="Label" parent="."]
+margin_top = 51.0
+margin_right = 24.0
+margin_bottom = 65.0
+text = "Cn"
+align = 1
+
+[node name="CnBase" type="LineEdit" parent="."]
+margin_left = 28.0
+margin_top = 46.0
+margin_right = 86.0
+margin_bottom = 70.0
+max_length = 2
+
+[node name="CnBonus" type="LineEdit" parent="."]
+margin_left = 90.0
+margin_top = 46.0
+margin_right = 148.0
+margin_bottom = 70.0
+max_length = 3
+
+[node name="In" type="Label" parent="."]
+margin_top = 79.0
+margin_right = 24.0
+margin_bottom = 93.0
+text = "In"
+align = 1
+
+[node name="InBase" type="LineEdit" parent="."]
+margin_left = 28.0
+margin_top = 74.0
+margin_right = 86.0
+margin_bottom = 98.0
+max_length = 2
+
+[node name="InBonus" type="LineEdit" parent="."]
+margin_left = 90.0
+margin_top = 74.0
+margin_right = 148.0
+margin_bottom = 98.0
+max_length = 3
+
+[node name="Lr" type="Label" parent="."]
+margin_top = 107.0
+margin_right = 24.0
+margin_bottom = 121.0
+text = "Lr"
+align = 1
+
+[node name="LrBase" type="LineEdit" parent="."]
+margin_left = 28.0
+margin_top = 102.0
+margin_right = 86.0
+margin_bottom = 126.0
+max_length = 2
+
+[node name="LrBonus" type="LineEdit" parent="."]
+margin_left = 90.0
+margin_top = 102.0
+margin_right = 148.0
+margin_bottom = 126.0
+max_length = 3
+
+[node name="Mg" type="Label" parent="."]
+margin_top = 135.0
+margin_right = 24.0
+margin_bottom = 149.0
+text = "Mg"
+align = 1
+
+[node name="MgBase" type="LineEdit" parent="."]
+margin_left = 28.0
+margin_top = 130.0
+margin_right = 86.0
+margin_bottom = 154.0
+max_length = 2
+
+[node name="MgBonus" type="LineEdit" parent="."]
+margin_left = 90.0
+margin_top = 130.0
+margin_right = 148.0
+margin_bottom = 154.0
+max_length = 3
+
+[node name="Pe" type="Label" parent="."]
+margin_top = 163.0
+margin_right = 24.0
+margin_bottom = 177.0
+text = "Pe"
+align = 1
+
+[node name="PeBase" type="LineEdit" parent="."]
+margin_left = 28.0
+margin_top = 158.0
+margin_right = 86.0
+margin_bottom = 182.0
+max_length = 2
+
+[node name="PeBonus" type="LineEdit" parent="."]
+margin_left = 90.0
+margin_top = 158.0
+margin_right = 148.0
+margin_bottom = 182.0
+max_length = 3

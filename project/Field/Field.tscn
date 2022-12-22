@@ -1,0 +1,48 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Field/Field.gd" type="Script" id=1]
+[ext_resource path="res://Buttons/AddButton.png" type="Texture" id=2]
+
+[sub_resource type="AtlasTexture" id=1]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=2]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 16, 16, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=3]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 16, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=4]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 0, 16, 16, 16 )
+
+[node name="Field" type="VBoxContainer"]
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 1 )
+
+[node name="FieldHeader" type="HBoxContainer" parent="."]
+margin_right = 40.0
+margin_bottom = 16.0
+
+[node name="FieldName" type="Label" parent="FieldHeader"]
+margin_top = 1.0
+margin_bottom = 15.0
+
+[node name="AddButton" type="TextureButton" parent="FieldHeader"]
+margin_left = 4.0
+margin_right = 20.0
+margin_bottom = 16.0
+texture_normal = SubResource( 1 )
+texture_pressed = SubResource( 2 )
+texture_hover = SubResource( 3 )
+texture_disabled = SubResource( 4 )
+
+[connection signal="pressed" from="FieldHeader/AddButton" to="." method="_on_AddButton_pressed"]

@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Field/ArmorField.gd" type="Script" id=1]
+
+[node name="ArmorField" type="HBoxContainer"]
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 1 )
+
+[node name="ArmorValue" type="LineEdit" parent="."]
+margin_right = 58.0
+margin_bottom = 40.0
+max_length = 2
+placeholder_text = "Armor"
+
+[node name="Description" type="LineEdit" parent="."]
+margin_left = 62.0
+margin_right = 120.0
+margin_bottom = 40.0
+expand_to_text_length = true
+placeholder_text = "Description"

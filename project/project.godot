@@ -39,6 +39,7 @@ _global_script_class_icons={
 [application]
 
 config/name="NewProject"
+run/main_scene="res://Document/Document.tscn"
 
 [display]
 
