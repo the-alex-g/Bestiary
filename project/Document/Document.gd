@@ -3,6 +3,7 @@ extends Control
 enum Mode {READING, WRITING, EDITING}
 
 const PATH := "res://savefile.dct"
+const ALPHABET := {"a":25, "b":24, "c":23, "d":22, "e":21, "f":20, "g":19, "h":18, "i":17, "j":16, "k":15, "l":14, "m":13, "n":12, "o":11, "p":10, "q":9, "r":8, "s":7, "t":6, "u":5, "v":4, "w":3, "x":2, "y":1, "z":0}
 
 var _bestiary_info : Array
 var _page_index := 0
@@ -94,6 +95,7 @@ func _save(info:Dictionary = {})->void:
 	if info.size() > 0:
 		if _mode == Mode.WRITING:
 			_bestiary_info.append(info)
+			_bestiary_info.sort_custom(self, "alphabetical_sort")
 		elif _mode == Mode.EDITING:
 			_bestiary_info[_page_index] = info
 	
@@ -104,6 +106,28 @@ func _save(info:Dictionary = {})->void:
 	for entry in _bestiary_info:
 		save_file.store_var(entry)
 	save_file.close()
+
+
+func alphabetical_sort(a:Dictionary, b:Dictionary)->bool:
+	var a_name : String = _remove_chars_from_string(a.name.to_lower(), [" ", ","])
+	var b_name : String = _remove_chars_from_string(b.name.to_lower(), [" ", ","])
+	if a_name.length() >= b_name.length():
+		for i in b_name.length():
+			if a_name[i] != b_name[i]:
+				return ALPHABET[a_name[i]] > ALPHABET[b_name[i]]
+	else:
+		for i in a_name.length():
+			if a_name[i] != b_name[i]:
+				return ALPHABET[a_name[i]] > ALPHABET[b_name[i]]
+	return false
+
+
+func _remove_chars_from_string(from:String, to_remove:PoolStringArray)->String:
+	var trimmed_string := ""
+	for character in from:
+		if not to_remove.has(character):
+			trimmed_string += character
+	return trimmed_string
 
 
 func _on_Previous_pressed()->void:
