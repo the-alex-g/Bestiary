@@ -45,6 +45,7 @@ func refresh()->void:
 
 
 func build(info:Dictionary)->void:
+	refresh()
 	_header_field.create(info.name, info.type)
 	_size_list.select(info.size_index)
 	_damage_field.create(info.damage)

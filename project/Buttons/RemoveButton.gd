@@ -14,8 +14,6 @@ func _init(id:int)->void:
 	texture_disabled = load("res://Buttons/Atlases/RemoveDisabled.tres")
 	# warning-ignore:return_value_discarded
 	connect("pressed", self, "_on_RemoveButton_pressed")
-	expand = true
-	stretch_mode = TextureButton.STRETCH_KEEP
 
 
 func _on_RemoveButton_pressed()->void:

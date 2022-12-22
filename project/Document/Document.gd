@@ -54,7 +54,7 @@ func _get_readable_from_info(info:Dictionary)->String:
 	readable += "Lr: " + info.stats.lr_base + " (" + ("+" if info.stats.lr_bonus[0] != "-" else "") + info.stats.lr_bonus + ")\n"
 	readable += "Mg: " + info.stats.mg_base + " (" + ("+" if info.stats.mg_bonus[0] != "-" else "") + info.stats.mg_bonus + ")\n"
 	readable += "Pe: " + info.stats.pe_base + " (" + ("+" if info.stats.pe_bonus[0] != "-" else "") + info.stats.pe_bonus + ")\n"
-	readable += "Damage Levels: " + info.damage.light + "/" + info.damage.moderate + "/" + info.damage.severe + "\n"
+	readable += "Damage Levels: " + info.damage.light + "/" + info.damage.moderate + "/" + info.damage.severe + "\n\n"
 	for field_name in info.fields.keys():
 		var field_info : Array = info.fields[field_name]
 		readable += field_name + "---------------------------------------\n"
@@ -64,6 +64,7 @@ func _get_readable_from_info(info:Dictionary)->String:
 				if section.values().find(value) == 0:
 					readable += ":"
 				readable += " "
+			readable += "\n"
 		readable += "\n"
 	return readable
 
@@ -109,25 +110,7 @@ func _save(info:Dictionary = {})->void:
 
 
 func alphabetical_sort(a:Dictionary, b:Dictionary)->bool:
-	var a_name : String = _remove_chars_from_string(a.name.to_lower(), [" ", ","])
-	var b_name : String = _remove_chars_from_string(b.name.to_lower(), [" ", ","])
-	if a_name.length() >= b_name.length():
-		for i in b_name.length():
-			if a_name[i] != b_name[i]:
-				return ALPHABET[a_name[i]] > ALPHABET[b_name[i]]
-	else:
-		for i in a_name.length():
-			if a_name[i] != b_name[i]:
-				return ALPHABET[a_name[i]] > ALPHABET[b_name[i]]
-	return false
-
-
-func _remove_chars_from_string(from:String, to_remove:PoolStringArray)->String:
-	var trimmed_string := ""
-	for character in from:
-		if not to_remove.has(character):
-			trimmed_string += character
-	return trimmed_string
+	return ALPHABET[a.name[0].to_lower()] > ALPHABET[b.name[0].to_lower()]
 
 
 func _on_Previous_pressed()->void:
