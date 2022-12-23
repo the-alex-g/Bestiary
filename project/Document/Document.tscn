@@ -130,6 +130,18 @@ margin_right = 100.0
 margin_bottom = 128.0
 text = "Remove"
 
+[node name="Print" type="Button" parent="MenuButtons"]
+margin_top = 132.0
+margin_right = 100.0
+margin_bottom = 150.0
+text = "Save as Text"
+
+[node name="Quit" type="Button" parent="MenuButtons"]
+margin_top = 154.0
+margin_right = 100.0
+margin_bottom = 172.0
+text = "Quit"
+
 [connection signal="pressed" from="MenuButtons/NewPage" to="." method="_on_NewPage_pressed"]
 [connection signal="pressed" from="MenuButtons/Back" to="." method="_on_Back_pressed"]
 [connection signal="pressed" from="MenuButtons/Save" to="." method="_on_Save_pressed"]
@@ -138,3 +150,5 @@ text = "Remove"
 [connection signal="pressed" from="MenuButtons/HBoxContainer/Right" to="." method="_on_Right_pressed"]
 [connection signal="pressed" from="MenuButtons/Edit" to="." method="_on_Edit_pressed"]
 [connection signal="pressed" from="MenuButtons/Remove" to="." method="_on_Remove_pressed"]
+[connection signal="pressed" from="MenuButtons/Print" to="." method="_on_Print_pressed"]
+[connection signal="pressed" from="MenuButtons/Quit" to="." method="_on_Quit_pressed"]

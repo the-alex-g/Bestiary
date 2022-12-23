@@ -197,3 +197,21 @@ func _set_mode(value:int)->void:
 			_edit_button.disabled = true
 			_remove_button.disabled = true
 			_new_page_button.disabled = true
+
+
+func _on_Print_pressed()->void:
+	_save_as_text()
+
+
+func _save_as_text()->void:
+	var text_file := File.new()
+	# warning-ignore:return_value_discarded
+	text_file.open("res://bestiary.txt", File.WRITE)
+	for creature in _bestiary_info:
+		text_file.store_string(_get_readable_from_info(creature))
+		text_file.store_string("//////////////////////////////////////////////////////\n\n")
+	text_file.close()
+
+
+func _on_Quit_pressed()->void:
+	get_tree().quit()
