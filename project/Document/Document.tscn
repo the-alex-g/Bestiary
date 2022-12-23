@@ -62,6 +62,8 @@ anchor_right = 0.5
 anchor_bottom = 1.0
 margin_left = -408.0
 margin_right = 408.0
+focus_mode = 2
+selection_enabled = true
 
 [node name="Page" parent="." instance=ExtResource( 2 )]
 anchor_left = 0.5

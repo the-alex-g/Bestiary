@@ -19,10 +19,12 @@ onready var _right_button : TextureButton = $MenuButtons/HBoxContainer/Right
 onready var _edit_button : Button = $MenuButtons/Edit
 onready var _remove_button : Button = $MenuButtons/Remove
 onready var _new_page_button : Button = $MenuButtons/NewPage
+onready var _print_button : Button = $MenuButtons/Print
 
 
 func _ready()->void:
 	_compile_master_dictionary()
+	_bestiary_info.sort_custom(self, "alphabetical_sort")
 	_reload_page()
 	if _bestiary_info.size() > 0:
 		_set_mode(Mode.READING)
@@ -110,7 +112,25 @@ func _save(info:Dictionary = {})->void:
 
 
 func alphabetical_sort(a:Dictionary, b:Dictionary)->bool:
-	return ALPHABET[a.name[0].to_lower()] > ALPHABET[b.name[0].to_lower()]
+	var a_name := _remove_chars_from_string(a.name, [" ", ","]).to_lower()
+	var b_name := _remove_chars_from_string(b.name, [" ", ","]).to_lower()
+	for i in min(a_name.length(), b_name.length()):
+		if ALPHABET[b_name[i]] < ALPHABET[a_name[i]]:
+			return true
+		elif ALPHABET[b_name[i]] > ALPHABET[a_name[i]]:
+			return false
+	if a_name.length() > b_name.length():
+		return false
+	else:
+		return true
+
+
+func _remove_chars_from_string(from:String, to_remove:PoolStringArray)->String:
+	var trimmed_string := ""
+	for character in from:
+		if not to_remove.has(character):
+			trimmed_string += character
+	return trimmed_string
 
 
 func _on_Previous_pressed()->void:
@@ -181,6 +201,7 @@ func _set_mode(value:int)->void:
 			_edit_button.disabled = false
 			_remove_button.disabled = false
 			_new_page_button.disabled = false
+			_print_button.disabled = false
 		Mode.WRITING, Mode.EDITING:
 			_display_page.visible = false
 			_page.visible = true
@@ -197,6 +218,7 @@ func _set_mode(value:int)->void:
 			_edit_button.disabled = true
 			_remove_button.disabled = true
 			_new_page_button.disabled = true
+			_print_button.disabled = true
 
 
 func _on_Print_pressed()->void:
