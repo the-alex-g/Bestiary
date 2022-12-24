@@ -18,6 +18,7 @@ func _get_info()->Dictionary:
 	var info := {
 		"name":_header_field.creature_name,
 		"type":_header_field.creature_type,
+		"alignment":_header_field.creature_alignment,
 		"juice":_flavor_text.text,
 		"size":"",
 		"armor":_armor_field.info,
@@ -49,7 +50,7 @@ func refresh()->void:
 
 func build(info:Dictionary)->void:
 	refresh()
-	_header_field.create(info.name, info.type)
+	_header_field.create(info.name, info.type, info.alignment)
 	if info.has("juice"):
 		_flavor_text.text = info.juice
 	_size_list.select(info.size_index)

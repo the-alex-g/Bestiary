@@ -78,29 +78,29 @@ margin_right = 100.0
 
 [node name="NewPage" type="Button" parent="MenuButtons"]
 margin_right = 100.0
-margin_bottom = 18.0
+margin_bottom = 25.0
 text = "Add Page"
 
 [node name="Back" type="Button" parent="MenuButtons"]
-margin_top = 22.0
+margin_top = 29.0
 margin_right = 100.0
-margin_bottom = 40.0
+margin_bottom = 54.0
 text = "Back"
 
 [node name="Save" type="Button" parent="MenuButtons"]
-margin_top = 44.0
+margin_top = 58.0
 margin_right = 100.0
-margin_bottom = 62.0
+margin_bottom = 83.0
 text = "Save Page"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MenuButtons"]
-margin_top = 66.0
+margin_top = 87.0
 margin_right = 100.0
-margin_bottom = 84.0
+margin_bottom = 112.0
 
 [node name="Left" type="TextureButton" parent="MenuButtons/HBoxContainer"]
 margin_right = 16.0
-margin_bottom = 18.0
+margin_bottom = 25.0
 texture_normal = SubResource( 1 )
 texture_pressed = SubResource( 2 )
 texture_hover = SubResource( 3 )
@@ -110,52 +110,51 @@ stretch_mode = 3
 [node name="IndexField" type="LineEdit" parent="MenuButtons/HBoxContainer"]
 margin_left = 20.0
 margin_right = 72.0
-margin_bottom = 18.0
+margin_bottom = 25.0
 
 [node name="Right" type="TextureButton" parent="MenuButtons/HBoxContainer"]
 margin_left = 76.0
 margin_right = 92.0
-margin_bottom = 18.0
+margin_bottom = 25.0
 texture_normal = SubResource( 5 )
 texture_pressed = SubResource( 6 )
 texture_hover = SubResource( 7 )
 texture_disabled = SubResource( 8 )
 
 [node name="Edit" type="Button" parent="MenuButtons"]
-margin_top = 88.0
+margin_top = 116.0
 margin_right = 100.0
-margin_bottom = 106.0
+margin_bottom = 141.0
 text = "Edit"
 
 [node name="Duplicate" type="Button" parent="MenuButtons"]
-margin_top = 110.0
+margin_top = 145.0
 margin_right = 100.0
-margin_bottom = 128.0
+margin_bottom = 170.0
 text = "Duplicate"
 
 [node name="Remove" type="Button" parent="MenuButtons"]
-margin_top = 132.0
+margin_top = 174.0
 margin_right = 100.0
-margin_bottom = 150.0
+margin_bottom = 199.0
 text = "Remove"
 
 [node name="Print" type="Button" parent="MenuButtons"]
-margin_top = 154.0
+margin_top = 203.0
 margin_right = 100.0
-margin_bottom = 172.0
+margin_bottom = 228.0
 text = "Save as Text"
 
 [node name="Quit" type="Button" parent="MenuButtons"]
-margin_top = 176.0
+margin_top = 232.0
 margin_right = 100.0
-margin_bottom = 194.0
+margin_bottom = 257.0
 text = "Quit"
 
 [connection signal="pressed" from="MenuButtons/NewPage" to="." method="_on_NewPage_pressed"]
 [connection signal="pressed" from="MenuButtons/Back" to="." method="_on_Back_pressed"]
 [connection signal="pressed" from="MenuButtons/Save" to="." method="_on_Save_pressed"]
 [connection signal="pressed" from="MenuButtons/HBoxContainer/Left" to="." method="_on_Left_pressed"]
-[connection signal="text_entered" from="MenuButtons/HBoxContainer/IndexField" to="." method="_on_IndexField_text_entered"]
 [connection signal="pressed" from="MenuButtons/HBoxContainer/Right" to="." method="_on_Right_pressed"]
 [connection signal="pressed" from="MenuButtons/Edit" to="." method="_on_Edit_pressed"]
 [connection signal="pressed" from="MenuButtons/Duplicate" to="." method="_on_Duplicate_pressed"]

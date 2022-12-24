@@ -19,3 +19,10 @@ margin_right = 120.0
 margin_bottom = 40.0
 expand_to_text_length = true
 placeholder_text = "Type"
+
+[node name="Alignment" type="LineEdit" parent="."]
+margin_left = 124.0
+margin_right = 182.0
+margin_bottom = 40.0
+max_length = 2
+placeholder_text = "Alignment"

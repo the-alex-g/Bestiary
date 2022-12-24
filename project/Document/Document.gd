@@ -32,6 +32,40 @@ func _ready()->void:
 		_set_mode(Mode.WRITING)
 
 
+func _input(event:InputEvent)->void:
+	if event is InputEventKey and event.is_pressed():
+		#print(OS.get_scancode_string(event.get_scancode_with_modifiers()), ": ", event.get_scancode_with_modifiers())
+		match event.get_scancode_with_modifiers():
+			268435525: # ctrl-e
+				if _mode == Mode.READING:
+					_on_Edit_pressed()
+			268435539: # ctrl-s
+				if _mode != Mode.READING:
+					_on_Save_pressed()
+			268435521: # ctrl-a
+				if _mode == Mode.READING:
+					_on_NewPage_pressed()
+			16777217: # escape
+				if _mode == Mode.READING:
+					_on_Quit_pressed()
+				else:
+					_on_Back_pressed()
+			268435536: # ctrl-p
+				_on_Print_pressed()
+			268435524: # ctrl-d
+				if _mode == Mode.READING:
+					_on_Duplicate_pressed()
+			268435538: # ctrl-r
+				if _mode == Mode.READING:
+					_on_Remove_pressed()
+			16777233: # right arrow
+				if _mode == Mode.READING:
+					_on_Next_pressed()
+			16777231: # left arrow
+				if _mode == Mode.READING:
+					_on_Previous_pressed()
+
+
 func _compile_master_dictionary()->void:
 	_bestiary_info = []
 	var save_file := File.new()
@@ -48,10 +82,10 @@ func _compile_master_dictionary()->void:
 # turns an info dictionary into a formatted string for display
 func _get_readable_from_info(info:Dictionary)->String:
 	var readable := ""
-	readable += info.name.capitalize() + "\n" + info.size.capitalize() + " " + info.type.capitalize() + "\n"
+	readable += info.name.capitalize() + "\n" + info.alignment.to_upper() + " " + info.size.capitalize() + " " + info.type.capitalize() + "\n"
 	if info.has("juice"):
 		if info.juice.length() > 0:
-			readable += info.juice + "\n"
+			readable += "	" + info.juice + "\n"
 	readable += "Armor: " + info.armor.value + (" (" + info.armor.description + ")\n" if info.armor.description.length() > 0 else "\n")
 	readable += "Ag: " + info.stats.ag_base + " (" + ("+" if info.stats.ag_bonus[0] != "-" else "") + info.stats.ag_bonus + ")\n"
 	readable += "Cn: " + info.stats.cn_base + " (" + ("+" if info.stats.cn_bonus[0] != "-" else "") + info.stats.cn_bonus + ")\n"
@@ -62,7 +96,10 @@ func _get_readable_from_info(info:Dictionary)->String:
 	readable += "Damage Levels: " + info.damage.light + "/" + info.damage.moderate + "/" + info.damage.severe + "\n\n"
 	for field_name in info.fields.keys():
 		var field_info : Array = info.fields[field_name]
-		readable += field_name + "---------------------------------------\n"
+		readable += field_name
+		for i in 153 - field_name.length():
+			readable += "-"
+		readable += "\n"
 		for section in field_info:
 			for value in section.values():
 				if section.values().find(value) == 0:
@@ -168,15 +205,6 @@ func _change_page(direction:int)->void:
 
 func _reload_page()->void:
 	_change_page(0)
-
-
-func _on_IndexField_text_entered(new_text:String)->void:
-	var new_index := int(new_text)
-	if new_index - 1 >= 0 and new_index < _bestiary_info.size():
-		_page_index = new_index
-	else:
-		new_index = _bestiary_info.size() - 1
-		_reload_page()
 
 
 func _on_Edit_pressed()->void:
