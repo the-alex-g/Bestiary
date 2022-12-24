@@ -9,6 +9,7 @@ onready var _size_list := $Container/SizeList
 onready var _stat_field := $Container/StatField
 onready var _damage_field := $Container/DamageField
 onready var _armor_field := $Container/ArmorField
+onready var _flavor_text := $Container/FlavorText
 
 var page_info : Dictionary setget , _get_info
 
@@ -17,6 +18,7 @@ func _get_info()->Dictionary:
 	var info := {
 		"name":_header_field.creature_name,
 		"type":_header_field.creature_type,
+		"juice":_flavor_text.text,
 		"size":"",
 		"armor":_armor_field.info,
 		"stats":_stat_field.stat_info,
@@ -39,6 +41,7 @@ func _get_info()->Dictionary:
 
 func refresh()->void:
 	emit_signal("refresh")
+	_flavor_text.text = ""
 	_size_list.unselect_all()
 	for field in _field_container.get_children():
 		field.refresh()
@@ -47,6 +50,8 @@ func refresh()->void:
 func build(info:Dictionary)->void:
 	refresh()
 	_header_field.create(info.name, info.type)
+	if info.has("juice"):
+		_flavor_text.text = info.juice
 	_size_list.select(info.size_index)
 	_damage_field.create(info.damage)
 	_armor_field.create(info.armor)

@@ -20,11 +20,11 @@ onready var _edit_button : Button = $MenuButtons/Edit
 onready var _remove_button : Button = $MenuButtons/Remove
 onready var _new_page_button : Button = $MenuButtons/NewPage
 onready var _print_button : Button = $MenuButtons/Print
+onready var _duplicate_button : Button = $MenuButtons/Duplicate
 
 
 func _ready()->void:
 	_compile_master_dictionary()
-	_bestiary_info.sort_custom(self, "alphabetical_sort")
 	_reload_page()
 	if _bestiary_info.size() > 0:
 		_set_mode(Mode.READING)
@@ -49,6 +49,9 @@ func _compile_master_dictionary()->void:
 func _get_readable_from_info(info:Dictionary)->String:
 	var readable := ""
 	readable += info.name.capitalize() + "\n" + info.size.capitalize() + " " + info.type.capitalize() + "\n"
+	if info.has("juice"):
+		if info.juice.length() > 0:
+			readable += info.juice + "\n"
 	readable += "Armor: " + info.armor.value + (" (" + info.armor.description + ")\n" if info.armor.description.length() > 0 else "\n")
 	readable += "Ag: " + info.stats.ag_base + " (" + ("+" if info.stats.ag_bonus[0] != "-" else "") + info.stats.ag_bonus + ")\n"
 	readable += "Cn: " + info.stats.cn_base + " (" + ("+" if info.stats.cn_bonus[0] != "-" else "") + info.stats.cn_bonus + ")\n"
@@ -62,6 +65,8 @@ func _get_readable_from_info(info:Dictionary)->String:
 		readable += field_name + "---------------------------------------\n"
 		for section in field_info:
 			for value in section.values():
+				if section.values().find(value) == 0:
+					readable += "	"
 				readable += value
 				if section.values().find(value) == 0:
 					readable += ":"
@@ -202,6 +207,7 @@ func _set_mode(value:int)->void:
 			_remove_button.disabled = false
 			_new_page_button.disabled = false
 			_print_button.disabled = false
+			_duplicate_button.disabled = false
 		Mode.WRITING, Mode.EDITING:
 			_display_page.visible = false
 			_page.visible = true
@@ -219,6 +225,7 @@ func _set_mode(value:int)->void:
 			_remove_button.disabled = true
 			_new_page_button.disabled = true
 			_print_button.disabled = true
+			_duplicate_button.disabled = true
 
 
 func _on_Print_pressed()->void:
@@ -237,3 +244,8 @@ func _save_as_text()->void:
 
 func _on_Quit_pressed()->void:
 	get_tree().quit()
+
+
+func _on_Duplicate_pressed()->void:
+	_set_mode(Mode.WRITING)
+	_page.build(_bestiary_info[_page_index])

@@ -66,6 +66,7 @@ focus_mode = 2
 selection_enabled = true
 
 [node name="Page" parent="." instance=ExtResource( 2 )]
+visible = false
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = -408.0
@@ -126,22 +127,28 @@ margin_right = 100.0
 margin_bottom = 106.0
 text = "Edit"
 
-[node name="Remove" type="Button" parent="MenuButtons"]
+[node name="Duplicate" type="Button" parent="MenuButtons"]
 margin_top = 110.0
 margin_right = 100.0
 margin_bottom = 128.0
-text = "Remove"
+text = "Duplicate"
 
-[node name="Print" type="Button" parent="MenuButtons"]
+[node name="Remove" type="Button" parent="MenuButtons"]
 margin_top = 132.0
 margin_right = 100.0
 margin_bottom = 150.0
-text = "Save as Text"
+text = "Remove"
 
-[node name="Quit" type="Button" parent="MenuButtons"]
+[node name="Print" type="Button" parent="MenuButtons"]
 margin_top = 154.0
 margin_right = 100.0
 margin_bottom = 172.0
+text = "Save as Text"
+
+[node name="Quit" type="Button" parent="MenuButtons"]
+margin_top = 176.0
+margin_right = 100.0
+margin_bottom = 194.0
 text = "Quit"
 
 [connection signal="pressed" from="MenuButtons/NewPage" to="." method="_on_NewPage_pressed"]
@@ -151,6 +158,7 @@ text = "Quit"
 [connection signal="text_entered" from="MenuButtons/HBoxContainer/IndexField" to="." method="_on_IndexField_text_entered"]
 [connection signal="pressed" from="MenuButtons/HBoxContainer/Right" to="." method="_on_Right_pressed"]
 [connection signal="pressed" from="MenuButtons/Edit" to="." method="_on_Edit_pressed"]
+[connection signal="pressed" from="MenuButtons/Duplicate" to="." method="_on_Duplicate_pressed"]
 [connection signal="pressed" from="MenuButtons/Remove" to="." method="_on_Remove_pressed"]
 [connection signal="pressed" from="MenuButtons/Print" to="." method="_on_Print_pressed"]
 [connection signal="pressed" from="MenuButtons/Quit" to="." method="_on_Quit_pressed"]
