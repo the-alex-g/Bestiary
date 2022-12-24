@@ -102,8 +102,7 @@ func _save(info:Dictionary = {})->void:
 	# if there is a new entry, add it
 	if info.size() > 0:
 		if _mode == Mode.WRITING:
-			_bestiary_info.append(info)
-			_bestiary_info.sort_custom(self, "alphabetical_sort")
+			_sort_into(info)
 		elif _mode == Mode.EDITING:
 			_bestiary_info[_page_index] = info
 	
@@ -116,9 +115,20 @@ func _save(info:Dictionary = {})->void:
 	save_file.close()
 
 
-func alphabetical_sort(a:Dictionary, b:Dictionary)->bool:
-	var a_name := _remove_chars_from_string(a.name, [" ", ","]).to_lower()
-	var b_name := _remove_chars_from_string(b.name, [" ", ","]).to_lower()
+func _sort_into(new_item:Dictionary)->void:
+	var success := false
+	for i in _bestiary_info.size():
+		if alphabetical_sort(new_item.name, _bestiary_info[i].name):
+			_bestiary_info.insert(i, new_item)
+			success = true
+			break
+	if not success:
+		_bestiary_info.append(new_item)
+
+
+func alphabetical_sort(a:String, b:String)->bool:
+	var a_name := _remove_chars_from_string(a, [" ", ","]).to_lower()
+	var b_name := _remove_chars_from_string(b, [" ", ","]).to_lower()
 	for i in min(a_name.length(), b_name.length()):
 		if ALPHABET[b_name[i]] < ALPHABET[a_name[i]]:
 			return true
