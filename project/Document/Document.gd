@@ -150,6 +150,8 @@ func _change_page(direction:int)->void:
 	if _bestiary_info.size() > 0:
 		_page_index += direction
 		_page_index %= _bestiary_info.size()
+		if _page_index < 0:
+			_page_index = _bestiary_info.size() + _page_index
 		_display_page.text = _get_readable_from_info(_bestiary_info[_page_index])
 	_index_label.text = str(_page_index + 1)
 
