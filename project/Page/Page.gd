@@ -58,4 +58,7 @@ func build(info:Dictionary)->void:
 	_armor_field.create(info.armor)
 	_stat_field.create(info.stats)
 	for field in info.fields.keys():
-		get_node("Container/FieldContainer/" + field).create(info.fields[field])
+		if field == "Spell-like Abilities":
+			get_node("Container/FieldContainer/SpellLikes").create(info.fields[field])
+		else:
+			get_node("Container/FieldContainer/" + field).create(info.fields[field])
