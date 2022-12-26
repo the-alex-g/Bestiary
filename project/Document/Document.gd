@@ -295,3 +295,12 @@ func _on_Quit_pressed()->void:
 func _on_Duplicate_pressed()->void:
 	_set_mode(Mode.WRITING)
 	_page.build(_bestiary_info[_page_index])
+
+
+func _on_IndexField_text_entered(new_text:String)->void:
+	if _bestiary_info.size() > 0:
+		_page_index = int(new_text) - 1
+		_page_index %= _bestiary_info.size()
+		if _page_index < 0:
+			_page_index = _bestiary_info.size() + _page_index
+		_display_page.text = _get_readable_from_info(_bestiary_info[_page_index])

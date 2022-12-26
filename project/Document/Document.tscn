@@ -155,6 +155,7 @@ text = "Quit"
 [connection signal="pressed" from="MenuButtons/Back" to="." method="_on_Back_pressed"]
 [connection signal="pressed" from="MenuButtons/Save" to="." method="_on_Save_pressed"]
 [connection signal="pressed" from="MenuButtons/HBoxContainer/Left" to="." method="_on_Left_pressed"]
+[connection signal="text_entered" from="MenuButtons/HBoxContainer/IndexField" to="." method="_on_IndexField_text_entered"]
 [connection signal="pressed" from="MenuButtons/HBoxContainer/Right" to="." method="_on_Right_pressed"]
 [connection signal="pressed" from="MenuButtons/Edit" to="." method="_on_Edit_pressed"]
 [connection signal="pressed" from="MenuButtons/Duplicate" to="." method="_on_Duplicate_pressed"]
