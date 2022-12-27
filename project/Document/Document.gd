@@ -1,13 +1,13 @@
 extends Control
 
-enum Mode {READING, WRITING, EDITING}
+enum Mode {READING, WRITING, EDITING, SAVING, LOADING, PRINTING}
 
-const PATH := "res://savefile.dct"
 const ALPHABET := {"a":25, "b":24, "c":23, "d":22, "e":21, "f":20, "g":19, "h":18, "i":17, "j":16, "k":15, "l":14, "m":13, "n":12, "o":11, "p":10, "q":9, "r":8, "s":7, "t":6, "u":5, "v":4, "w":3, "x":2, "y":1, "z":0}
 
 var _bestiary_info : Array
 var _page_index := 0
 var _mode : int setget _set_mode
+var _path := ""
 
 onready var _page : Page = $Page
 onready var _display_page : RichTextLabel = $PageLabel
@@ -21,20 +21,12 @@ onready var _remove_button : Button = $MenuButtons/Remove
 onready var _new_page_button : Button = $MenuButtons/NewPage
 onready var _print_button : Button = $MenuButtons/Print
 onready var _duplicate_button : Button = $MenuButtons/Duplicate
-
-
-func _ready()->void:
-	_compile_master_dictionary()
-	_reload_page()
-	if _bestiary_info.size() > 0:
-		_set_mode(Mode.READING)
-	else:
-		_set_mode(Mode.WRITING)
+onready var _file_dialog : FileDialog = $FileDialog
 
 
 func _input(event:InputEvent)->void:
 	if event is InputEventKey and event.is_pressed():
-		#print(OS.get_scancode_string(event.get_scancode_with_modifiers()), ": ", event.get_scancode_with_modifiers())
+		print(OS.get_scancode_string(event.get_scancode_with_modifiers()), ": ", event.get_scancode_with_modifiers())
 		match event.get_scancode_with_modifiers():
 			268435525: # ctrl-e
 				if _mode == Mode.READING:
@@ -64,14 +56,34 @@ func _input(event:InputEvent)->void:
 			16777231: # left arrow
 				if _mode == Mode.READING:
 					_on_Previous_pressed()
+			268435535: # ctrl-o
+				_on_Load_pressed()
+			268435534: # ctrl-n
+				_on_NewPage_pressed()
+			301989971: # ctrl-shift-s
+				_on_SaveAs_pressed()
+
+
+func _load()->void:
+	_set_mode(Mode.LOADING)
+	_file_dialog.mode = FileDialog.MODE_OPEN_FILE
+	_file_dialog.popup()
+
+
+func _create_new()->void:
+	_bestiary_info = []
+	_path = ""
+	_display_page.text = ""
+	_set_mode(Mode.WRITING)
+	_open_page_editor()
 
 
 func _compile_master_dictionary()->void:
 	_bestiary_info = []
 	var save_file := File.new()
-	if save_file.file_exists(PATH):
+	if save_file.file_exists(_path):
 		# warning-ignore:return_value_discarded
-		save_file.open(PATH, File.READ)
+		save_file.open(_path, File.READ)
 		
 		while save_file.get_position() < save_file.get_len():
 			_bestiary_info.append(save_file.get_var())
@@ -130,26 +142,35 @@ func _open_page_editor(info := {})->void:
 
 
 func _on_Save_pressed()->void:
-	_save(_page.page_info)
-	_set_mode(Mode.READING)
+	_add_item(_page.page_info)
 	_reload_page()
 
 
-func _save(info:Dictionary = {})->void:
-	# if there is a new entry, add it
-	if info.size() > 0:
-		if _mode == Mode.WRITING:
-			_sort_into(info)
-		elif _mode == Mode.EDITING:
-			_bestiary_info[_page_index] = info
-	
+func _add_item(info:Dictionary = {})->void:
+	if _mode == Mode.WRITING:
+		_sort_into(info)
+	elif _mode == Mode.EDITING:
+		_bestiary_info[_page_index] = info
+	_save()
+
+
+func _save()->void:
 	# this saves ALL of the entries in _bestiary_info. Otherwise, it doesn't work.
-	var save_file := File.new()
-	# warning-ignore:return_value_discarded
-	save_file.open(PATH, File.WRITE)
-	for entry in _bestiary_info:
-		save_file.store_var(entry)
-	save_file.close()
+	if _path != "":
+		print("saving file")
+		var save_file := File.new()
+		# warning-ignore:return_value_discarded
+		save_file.open(_path, File.WRITE)
+		for entry in _bestiary_info:
+			save_file.store_var(entry)
+		save_file.close()
+		
+		_set_mode(Mode.READING)
+	else:
+		print("no path")
+		_set_mode(Mode.SAVING)
+		_file_dialog.mode = FileDialog.MODE_SAVE_FILE
+		_file_dialog.popup()
 
 
 func _sort_into(new_item:Dictionary)->void:
@@ -235,6 +256,7 @@ func _on_Back_pressed()->void:
 
 func _set_mode(value:int)->void:
 	_mode = value
+	
 	match _mode:
 		Mode.READING:
 			_display_page.visible = true
@@ -248,6 +270,7 @@ func _set_mode(value:int)->void:
 			_new_page_button.disabled = false
 			_print_button.disabled = false
 			_duplicate_button.disabled = false
+		
 		Mode.WRITING, Mode.EDITING:
 			_display_page.visible = false
 			_page.visible = true
@@ -269,13 +292,17 @@ func _set_mode(value:int)->void:
 
 
 func _on_Print_pressed()->void:
-	_save_as_text()
+	_set_mode(Mode.PRINTING)
+	_file_dialog.mode = FileDialog.MODE_SAVE_FILE
+	_file_dialog.filters = ["*.txt ; Text File"]
+	_file_dialog.popup()
+	#_save_as_text()
 
 
-func _save_as_text()->void:
+func _save_as_text(to:String)->void:
 	var text_file := File.new()
 	# warning-ignore:return_value_discarded
-	text_file.open("res://bestiary.txt", File.WRITE)
+	text_file.open(to, File.WRITE)
 	for creature in _bestiary_info:
 		text_file.store_string(_get_readable_from_info(creature))
 		text_file.store_string("//////////////////////////////////////////////////////\n\n")
@@ -298,3 +325,32 @@ func _on_IndexField_text_entered(new_text:String)->void:
 		if _page_index < 0:
 			_page_index = _bestiary_info.size() + _page_index
 		_display_page.text = _get_readable_from_info(_bestiary_info[_page_index])
+
+
+func _on_FileDialog_file_selected(path:String)->void:
+	match _mode:
+		Mode.LOADING:
+			_page_index = 0
+			_path = path
+			_compile_master_dictionary()
+			_reload_page()
+		Mode.SAVING:
+			_path = path
+			_save()
+		Mode.PRINTING:
+			_save_as_text(path)
+	
+	_set_mode(Mode.READING)
+
+
+func _on_New_pressed()->void:
+	_create_new()
+
+
+func _on_Load_pressed()->void:
+	_load()
+
+
+func _on_SaveAs_pressed()->void:
+	_path = ""
+	_save()

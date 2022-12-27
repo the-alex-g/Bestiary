@@ -1,27 +1,767 @@
-Skeleton, Armored
-Average Undead
-Armor: 13 (armor)
-Ag: 0 (-4)
+Alchemical Ooze
+U Small Ooze
+	The unfortunate result of some alchemical experiment.
+Armor: 10
+Ag: 2 (-2)
 Cn: 4 (+0)
 In: 0 (-4)
 Lr: 0 (-4)
-Mg: 5 (+1)
+Mg: 2 (-2)
 Pe: 0 (-4)
-Damage Levels: 2/3/2
+Damage Levels: 1/7/2
 
-Movement---------------------------------------
-Walking: 6 
+Movement-------------------------------------------------------------------------------------------------------------------------------------------------
+	Walking: 4 
 
-Attacks---------------------------------------
-Ancient Sword: +0 Slashing 
+Attacks--------------------------------------------------------------------------------------------------------------------------------------------------
+	Pseudopod: +2 Acid Bludgeoning 
 
-Abilities---------------------------------------
-Immunities: Mental, Poison 
-
+Abilities------------------------------------------------------------------------------------------------------------------------------------------------
+	Immunities: Mental, Poison 
+	Resistances: Acid, Lightning, Piercing 
+	Vulnerabilities: Cold, Fire, Slashing 
+	Alchemical Nature: At the start of each of this creature's turns, roll 1d8. On a 1, this creature suffers wounds from a 1d4 damage die. On a 2-5, this creature's attacks have +1. On a 6-7, this creature heals one severe wound. On an 8, this creature can take an additional Attack action this turn. 
 
 //////////////////////////////////////////////////////
+
+Awakened Sapling
+NN Small Plant
+Armor: 11 (natural armor)
+Ag: 4 (+0)
+Cn: 4 (+0)
+In: 4 (+0)
+Lr: 0 (-4)
+Mg: 4 (+0)
+Pe: 0 (-4)
+Damage Levels: 3/2/1
+
+Movement-------------------------------------------------------------------------------------------------------------------------------------------------
+	Walking: 6 
+
+Attacks--------------------------------------------------------------------------------------------------------------------------------------------------
+	Claw: +0 Slashing 
+
+Abilities------------------------------------------------------------------------------------------------------------------------------------------------
+	Immunities: Mental 
+	Vulnerabilities: Fire 
+
+//////////////////////////////////////////////////////
+
+Bear
+U Large Animal
+Armor: 11 (natural armor)
+Ag: 4 (+0)
+Cn: 5 (+1)
+In: 5 (+1)
+Lr: 0 (-4)
+Mg: 7 (+3)
+Pe: 0 (-4)
+Damage Levels: 8/7/6
+
+Senses---------------------------------------------------------------------------------------------------------------------------------------------------
+	Keen Scent: 14 
+
+Movement-------------------------------------------------------------------------------------------------------------------------------------------------
+	Walking: 6 
+
+Attacks--------------------------------------------------------------------------------------------------------------------------------------------------
+	Claw: +4 Slashing 
+	Bite: +4 Piercing 
+
+Actions--------------------------------------------------------------------------------------------------------------------------------------------------
+	Charge (recharge 5-6): Move 8. If this creature moved at least six fathoms, its attacks get +1 this round. 
+
+//////////////////////////////////////////////////////
+
+Boar
+U Large Animal
+Armor: 12 (natural armor)
+Ag: 3 (-1)
+Cn: 6 (+2)
+In: 4 (+0)
+Lr: 0 (-4)
+Mg: 7 (+3)
+Pe: 0 (-4)
+Damage Levels: 8/7/6
+
+Movement-------------------------------------------------------------------------------------------------------------------------------------------------
+	Walking: 6 
+
+Attacks--------------------------------------------------------------------------------------------------------------------------------------------------
+	Tusk: +3 Slashing 
+
+Actions--------------------------------------------------------------------------------------------------------------------------------------------------
+	Charge (recharge 5-6): Move 8. If this creature moved at least six fathoms, its attacks get +2 this round. 
+
+//////////////////////////////////////////////////////
+
+Crustal
+U Average Animal
+	These giant crab-like creatures were apparently bred/created by the mind flayers to serve as amphibious slaves and soldiers.
+Armor: 12 (natural armor)
+Ag: 3 (-1)
+Cn: 4 (+0)
+In: 4 (+0)
+Lr: 0 (-4)
+Mg: 5 (+1)
+Pe: 0 (-4)
+Damage Levels: 4/4/2
+
+Senses---------------------------------------------------------------------------------------------------------------------------------------------------
+	Tremorsense: 8 
+
+Movement-------------------------------------------------------------------------------------------------------------------------------------------------
+	Walking: 6 
+
+Attacks--------------------------------------------------------------------------------------------------------------------------------------------------
+	Claw: +2/+1 Slashing 
+
+Abilities------------------------------------------------------------------------------------------------------------------------------------------------
+	Resistances: Mental 
+	Multiattack: This creature can make one additional Claw attack. 
+	Telepathic Attunement: While within telepathy range of another creature, this creature has a base Lr equal to half the telepathic creature's. It will also obey any commands from that creature, preferring mind flayers over other telepathic creatures. 
+	Amphibious: This creature can breathe air and water. 
+
+//////////////////////////////////////////////////////
+
+Crustal Fishcaller
+U Average Animal
+	These crustal have the power to command fish.
+Armor: 12 (natural armor)
+Ag: 3 (-1)
+Cn: 4 (+0)
+In: 5 (+1)
+Lr: 0 (-4)
+Mg: 5 (+1)
+Pe: 0 (-4)
+Damage Levels: 3/4/2
+
+Senses---------------------------------------------------------------------------------------------------------------------------------------------------
+	Tremorsense: 10 
+	Telepathy (fish only): 8 
+
+Movement-------------------------------------------------------------------------------------------------------------------------------------------------
+	Walking: 6 
+
+Attacks--------------------------------------------------------------------------------------------------------------------------------------------------
+	Claw: +2/+0 Slashing 
+
+Actions--------------------------------------------------------------------------------------------------------------------------------------------------
+	Direct Fish: One fish within 8 can take an action, as long as it does not move further than eight fathoms from this creature. 
+	Create School (recharge 6): While this creature is touching a body of water, it can summon a School of Fish (random type). 
+
+Abilities------------------------------------------------------------------------------------------------------------------------------------------------
+	Resistances: Mental 
+	Multiattack: This creature can make one additional Claw attack. 
+	Telepathic Attunement: While within telepathy range of another creature, this creature has a base Lr equal to half the telepathic creature's. It will also obey any commands from that creature, preferring mind flayers over other telepathic creatures. 
+	Aquatic: This creature can only breathe water. 
+	Hold Breath: This creature can hold its breath for up to ten minutes at a time. 
+
+//////////////////////////////////////////////////////
+
+Crustal Mindcutter
+U Average Animal
+	Some crustals absorbed the mind flayer's mental power during the creation process.
+Armor: 12 (natural armor)
+Ag: 3 (-1)
+Cn: 4 (+0)
+In: 4 (+0)
+Lr: 1 (-3)
+Mg: 5 (+1)
+Pe: 0 (-4)
+Damage Levels: 4/3/2
+
+Senses---------------------------------------------------------------------------------------------------------------------------------------------------
+	Tremorsense: 10 
+
+Movement-------------------------------------------------------------------------------------------------------------------------------------------------
+	Walking: 6 
+
+Attacks--------------------------------------------------------------------------------------------------------------------------------------------------
+	Claw: +1/+0 Slashing 
+
+Actions--------------------------------------------------------------------------------------------------------------------------------------------------
+	Sever (recharge 6): Target creature within 6 must pass a Cn 15 save or become incapacitated until the start of this creature's next turn. 
+	Mind Spike (recharge 5-6): Target creature within 6 must pass a Cn 10 save or suffer wounds from a 1d4 damage die. 
+
+Abilities------------------------------------------------------------------------------------------------------------------------------------------------
+	Resistances: Mental 
+	Multiattack: This creature may make one additional Claw attack. 
+	Telepathic Attunement: While this creature is within telepathy range of another creature, this creature has base Lr equal to half of the telepathic creature's. It will also obey any commands from that creature, preferring mind flayers over other telepathic creatures. 
+	Amphibious: This creature can breathe air and water. 
+
+//////////////////////////////////////////////////////
+
+Crustal Myrmidon
+U Large Animal
+	These creatures were created to serve as bodyguards and shock troopers for the mind flayers.
+Armor: 13 (natural armor)
+Ag: 3 (-1)
+Cn: 4 (+0)
+In: 4 (+0)
+Lr: 0 (-4)
+Mg: 6 (+2)
+Pe: 0 (-4)
+Damage Levels: 6/5/3
+
+Senses---------------------------------------------------------------------------------------------------------------------------------------------------
+	Tremorsense: 8 
+
+Movement-------------------------------------------------------------------------------------------------------------------------------------------------
+	Walking: 6 
+
+Attacks--------------------------------------------------------------------------------------------------------------------------------------------------
+	Claw: +3/+2 Slashing 
+
+Abilities------------------------------------------------------------------------------------------------------------------------------------------------
+	Resistances: Mental, Slashing 
+	Multiattack: This creature may make one additional Claw attack. 
+	Telepathic Attunement: While this creature is within telepathy range of another creature, this creature has base Lr equal to half of the telepathic creature's. It will also obey any commands from that creature, preferring mind flayers over other telepathic creatures. 
+	Amphibious: This creature can breathe air and water. 
+
+//////////////////////////////////////////////////////
+
+Electric Eel
+U Average Animal (fish)
+Armor: 11
+Ag: 5 (+1)
+Cn: 4 (+0)
+In: 5 (+1)
+Lr: 0 (-4)
+Mg: 4 (+0)
+Pe: 0 (-4)
+Damage Levels: 4/3/2
+
+Senses---------------------------------------------------------------------------------------------------------------------------------------------------
+	Blindsight: 4 
+
+Movement-------------------------------------------------------------------------------------------------------------------------------------------------
+	Swimming: 6 
+
+Attacks--------------------------------------------------------------------------------------------------------------------------------------------------
+	Bite: +0 Piercing 
+
+Actions--------------------------------------------------------------------------------------------------------------------------------------------------
+	Shock (recharge 6): All adjacent creatures suffer Lightning wounds from a 1d4 damage die OR one adjacent creature suffers Lightning wounds from a 1d6 damage die, or a 1d8 damage die if the eel is not underwater. 
+
+Abilities------------------------------------------------------------------------------------------------------------------------------------------------
+	Immunities: Lightning 
+	Aquatic: This creature can only breathe water. 
+	Hold Breath: This creature can hold its breath for up to two hours. 
+
+//////////////////////////////////////////////////////
+
+Ettercap
+NE Average Abberation
+Armor: 12 (natural armor)
+Ag: 5 (+1)
+Cn: 4 (+0)
+In: 5 (+1)
+Lr: 2 (-2)
+Mg: 4 (+0)
+Pe: 2 (-2)
+Damage Levels: 3/3/2
+
+Senses---------------------------------------------------------------------------------------------------------------------------------------------------
+	Tremorsense: 6 
+	Telepathy (spiders only): 10 
+
+Movement-------------------------------------------------------------------------------------------------------------------------------------------------
+	Walking: 6 
+	Climbing: 5 
+
+Attacks--------------------------------------------------------------------------------------------------------------------------------------------------
+	Claw: +1 Slashing 
+	Garrote: -3 Slashing. This attack deals severe wounds regardless of the margin of success. 
+
+//////////////////////////////////////////////////////
+
+Flayer Octopus
+U Tiny Animal
+	The flayer octopuses appear to be an early and unsuccessful experiment in mind flayer biological creations.
+Armor: 13
+Ag: 7 (+3)
+Cn: 5 (+1)
+In: 5 (+1)
+Lr: 0 (-4)
+Mg: 2 (-2)
+Pe: 0 (-4)
+Damage Levels: 1/1/1
+
+Senses---------------------------------------------------------------------------------------------------------------------------------------------------
+	Sense Living: 4 
+
+Movement-------------------------------------------------------------------------------------------------------------------------------------------------
+	Walking: 4 
+	Climbing: 4 
+	Swimming: 2 
+
+Attacks--------------------------------------------------------------------------------------------------------------------------------------------------
+	Bite: +0 Weak Poison Slashing 
+
+Actions--------------------------------------------------------------------------------------------------------------------------------------------------
+	Jet (recharge 6): This creature's swimming speed is increased by 6 until the end of its next turn. 
+	Paralyze (recharge 6): Target creature within 1 must pass a Cn 8 save or become incapacitated until the end of its next turn. 
+
+Abilities------------------------------------------------------------------------------------------------------------------------------------------------
+	Camoflauge: It takes a In 16 test to detect this creature while it is motionless. 
+	Resistances: Mental 
+	Aquatic: This creature can only breathe water. 
+	Hold Breath: This creature can hold its breath for up to one minute. 
+
+//////////////////////////////////////////////////////
+
+Floating Spore
+U Tiny Plant
+Armor: 10
+Ag: 4 (+0)
+Cn: 4 (+0)
+In: 0 (-4)
+Lr: 0 (-4)
+Mg: 0 (-4)
+Pe: 0 (-4)
+Damage Levels: 0/0/1
+
+Senses---------------------------------------------------------------------------------------------------------------------------------------------------
+	Blindsight: 3 
+
+Movement-------------------------------------------------------------------------------------------------------------------------------------------------
+	Hover: 1 
+
+Actions--------------------------------------------------------------------------------------------------------------------------------------------------
+	Self-Destruct: This creature suffers one severe wound. 
+
+Abilities------------------------------------------------------------------------------------------------------------------------------------------------
+	Immunities: Mental 
+	Explosion: When this creature dies, all living non-plant creatures within 2 must pass a Cn 12 save or suffer Poison wounds from a 1d4 damage die. 
+
+//////////////////////////////////////////////////////
+
+Fungal Soldier
+NN Small Plant
+Armor: 12 (natural armor)
+Ag: 4 (+0)
+Cn: 4 (+0)
+In: 2 (-2)
+Lr: 0 (-4)
+Mg: 3 (-1)
+Pe: 0 (-4)
+Damage Levels: 3/1/1
+
+Senses---------------------------------------------------------------------------------------------------------------------------------------------------
+	Blindsight: 4 
+
+Movement-------------------------------------------------------------------------------------------------------------------------------------------------
+	Walking: 6 
+
+Attacks--------------------------------------------------------------------------------------------------------------------------------------------------
+	Slam: -1 Bludgeoning 
+	Spore Bolt (recharge 5-6): +1 Poison with a range of 4 
+
+Actions--------------------------------------------------------------------------------------------------------------------------------------------------
+	Spore Burst (recharge 6): All living non-plant creatures within 2 must pass a Cn 12 save or suffer Poison wounds from a 1d4 damage die. 
+
+Abilities------------------------------------------------------------------------------------------------------------------------------------------------
+	Immunities: Mental 
+
+//////////////////////////////////////////////////////
+
+Giant Manta
+U Huge Animal (fish)
+Armor: 11
+Ag: 5 (+1)
+Cn: 5 (+1)
+In: 4 (+0)
+Lr: 1 (-3)
+Mg: 6 (+2)
+Pe: 0 (-4)
+Damage Levels: 7/8/6
+
+Movement-------------------------------------------------------------------------------------------------------------------------------------------------
+	Swimming: 9 
+
+Abilities------------------------------------------------------------------------------------------------------------------------------------------------
+	Aquatic: This creature can only breathe water. 
+
+//////////////////////////////////////////////////////
+
+Giant Octopus
+U Large Animal
+Armor: 13 (natural armor)
+Ag: 6 (+2)
+Cn: 4 (+0)
+In: 5 (+1)
+Lr: 0 (-4)
+Mg: 6 (+2)
+Pe: 0 (-4)
+Damage Levels: 7/6/5
+
+Movement-------------------------------------------------------------------------------------------------------------------------------------------------
+	Walking: 6 
+	Climbing: 6 
+	Swimming: 3 
+
+Attacks--------------------------------------------------------------------------------------------------------------------------------------------------
+	Bite: +3 Poison Slashing 
+	Tentacle: +2 bonus. If this attack hits, instead of causing damage, the target is grappled. This creature may grapple up to four creatures in this manner. 
+
+Actions--------------------------------------------------------------------------------------------------------------------------------------------------
+	Jet (recharge 5-6): This creature's swimming speed is increased by 7 until the end of its next turn. 
+	Paralyze (recharge 6): Target creature within 1 must pass a Cn 8 save or become incapacitated until the end of its next turn. 
+
+Abilities------------------------------------------------------------------------------------------------------------------------------------------------
+	Camoflauge: It takes a In 13 test to detect this creature while it is motionless. 
+	Aquatic: This creature can only breathe water. 
+	Hold Breath: This creature can hold its breath for up to five minutes. 
+
+//////////////////////////////////////////////////////
+
+Giant Rat
+U Small Animal
+Armor: 12
+Ag: 6 (+2)
+Cn: 4 (+0)
+In: 5 (+1)
+Lr: 0 (-4)
+Mg: 3 (-1)
+Pe: 0 (-4)
+Damage Levels: 1/1/1
+
+Movement-------------------------------------------------------------------------------------------------------------------------------------------------
+	Walking: 6 
+
+Attacks--------------------------------------------------------------------------------------------------------------------------------------------------
+	Bite: +1 Weak Piercing 
+
+//////////////////////////////////////////////////////
+
+Giant Spider
+U Large Animal
+Armor: 13 (natural armor)
+Ag: 5 (+1)
+Cn: 5 (+1)
+In: 4 (+0)
+Lr: 0 (-4)
+Mg: 4 (+0)
+Pe: 0 (-4)
+Damage Levels: 3/2/3
+
+Senses---------------------------------------------------------------------------------------------------------------------------------------------------
+	Tremorsense: 8 
+
+Movement-------------------------------------------------------------------------------------------------------------------------------------------------
+	Walking: 7 
+	Climbing: 6 
+
+Attacks--------------------------------------------------------------------------------------------------------------------------------------------------
+	Bite: +2 Poison Slashing 
+
+Actions--------------------------------------------------------------------------------------------------------------------------------------------------
+	Web (recharge 5-6): Target creature within 8 must pass a Ag 13 save or be entangled(16). 
+
+//////////////////////////////////////////////////////
+
+Goldweaver
+U Tiny Animal
+	These golden spiders weave webs of pure gold. As such, they are extremely valuable. Unfortunately, they also have some of the most deadly venom of any creature.
+Armor: 14 (natural armor)
+Ag: 5 (+1)
+Cn: 5 (+1)
+In: 4 (+0)
+Lr: 0 (-4)
+Mg: 1 (-3)
+Pe: 0 (-4)
+Damage Levels: 2/2/1
+
+Senses---------------------------------------------------------------------------------------------------------------------------------------------------
+	Tremorsense: 4 
+
+Movement-------------------------------------------------------------------------------------------------------------------------------------------------
+	Walking: 5 
+	Climbing: 5 
+
+Attacks--------------------------------------------------------------------------------------------------------------------------------------------------
+	Bite: +2 Piercing Poison. If the attack hits, the target must pass a Cn 14 save or suffer from goldbite venom. 
+
+Abilities------------------------------------------------------------------------------------------------------------------------------------------------
+	Goldbite Venom: At the start of each of your turns, suffer a moderate wound and make a Cn 15 save. If you fail the save, you suffer a moderate wound. If you succeed twice in a row, this effect ends. 
+	Immunities: Mental, Poison 
+
+//////////////////////////////////////////////////////
+
+Hoarunner
+CN Small Spirit
+Armor: 13 (natural armor)
+Ag: 6 (+2)
+Cn: 4 (+0)
+In: 4 (+0)
+Lr: 4 (+0)
+Mg: 3 (-1)
+Pe: 4 (+0)
+Damage Levels: 2/2/1
+
+Movement-------------------------------------------------------------------------------------------------------------------------------------------------
+	Walking: 7 
+
+Attacks--------------------------------------------------------------------------------------------------------------------------------------------------
+	Claw: +3 Cold Slashing 
+
+Abilities------------------------------------------------------------------------------------------------------------------------------------------------
+	Immunities: Cold 
+	Vulnerabilities: Fire 
+	Sure Footing: This creature suffers no movement penalties from terrain. 
+
+Spell-like Abilities-------------------------------------------------------------------------------------------------------------------------------------
+	Rime: 1 
+
+//////////////////////////////////////////////////////
+
+Marble Golem
+A Large Construct
+Armor: 14 (natural armor)
+Ag: 3 (-1)
+Cn: 4 (+0)
+In: 0 (-4)
+Lr: 0 (-4)
+Mg: 6 (+2)
+Pe: 0 (-4)
+Damage Levels: 3/7/6
+
+Senses---------------------------------------------------------------------------------------------------------------------------------------------------
+	Blindsight: 10 
+
+Movement-------------------------------------------------------------------------------------------------------------------------------------------------
+	Walking: 6 
+
+Attacks--------------------------------------------------------------------------------------------------------------------------------------------------
+	Giant Blade: +4 Slashing 
+	Smash: +3 Bludgeoning 
+
+Actions--------------------------------------------------------------------------------------------------------------------------------------------------
+	Halt: Target creature within 6 must pass a Cn 14 save or be immobilized until the end of its next turn. 
+
+Abilities------------------------------------------------------------------------------------------------------------------------------------------------
+	Immunities: Mental, Poison 
+	Vulnerabilities: Acid 
+
+Spell-like Abilities-------------------------------------------------------------------------------------------------------------------------------------
+	Impenetrable Sphere (1/day): 0 
+
+//////////////////////////////////////////////////////
+
+Mind Flayer
+NE Average Abberation
+Armor: 10
+Ag: 4 (+0)
+Cn: 7 (+3)
+In: 4 (+0)
+Lr: 5 (+1)
+Mg: 4 (+0)
+Pe: 4 (+0)
+Damage Levels: 5/3/3
+
+Senses---------------------------------------------------------------------------------------------------------------------------------------------------
+	Telepathy: 10 
+
+Movement-------------------------------------------------------------------------------------------------------------------------------------------------
+	Walking: 6 
+
+Attacks--------------------------------------------------------------------------------------------------------------------------------------------------
+	Staff: +0 Bludgeoning 
+
+Actions--------------------------------------------------------------------------------------------------------------------------------------------------
+	Mind Spike: Target creature within 6 must pass a Cn 10 save or suffer mental wounds from a 1d4 damage die. This ability can target up to two additional creatures, but the save difficulty is reduced by two for each extra target. 
+	Dominate (recharge 6): Target creature within 6 must pass a Cn 8 save or come under this creature's control. At the end of each of this creature's turns, the controlled creature may remake the save, ending the effect on a success. 
+	Mind Shield (recharge 5-6): Creatures within 6 must pass a Cn 12 save in order to harm this creature. This effect ends at the end of this creature's next turn. 
+	Telepathic Message: This creature can send a mental message to any number of creatures within 1/8 mile. If the message is sent to multiple creatures, they all hear the same message. 
+	Paralyze (recharge 6): Target creature within 6 must pass a Cn 12 save or be incapacitated until the end of its next turn. This ability can target up to two additional creatures, but the save difficulty is reduced by two for each extra target. 
+
+Abilities------------------------------------------------------------------------------------------------------------------------------------------------
+	Immunities: Mental 
+	Hivemind: The Cn save difficulties for this creature's actions is increased by X, where X is the number of other mind flayers within 1/4 mile. X cannot exceed 5. Whenever a mind flayer within 1/4 mile dies, this creature suffers unblockable wounds from a 1d4 damage die.  
+	Amphibious: This creature can breathe air and water. 
+	Neutral Buoyancy: While in water, this creature does not float or sink. On its turn, it may alter its vertical position in the water by up to two fathoms. 
+
+//////////////////////////////////////////////////////
+
+Mind Flayer Enthraller
+NE Average Abberation
+	The Underlords often hire Enthrallers to ensure that their slaves remain subdued. However, if the Underlord is not careful, the Enthraller may turn the slaves into a brainwashed army and conquer the realm.
+Armor: 10
+Ag: 4 (+0)
+Cn: 7 (+3)
+In: 4 (+0)
+Lr: 5 (+1)
+Mg: 4 (+0)
+Pe: 4 (+0)
+Damage Levels: 5/3/3
+
+Senses---------------------------------------------------------------------------------------------------------------------------------------------------
+	Telepathy: 10 
+
+Movement-------------------------------------------------------------------------------------------------------------------------------------------------
+	Walking: 6 
+
+Attacks--------------------------------------------------------------------------------------------------------------------------------------------------
+	Staff: +0 Bludgeoning 
+
+Actions--------------------------------------------------------------------------------------------------------------------------------------------------
+	Mind Spike: Target creature within 6 must pass a Cn 11 save or suffer mental wounds from a 1d4 damage die. This ability can target up to two additional creatures, but the save difficulty is reduced by two for each extra target. 
+	Dominate (recharge 5-6): Target creature within 6 must pass a Cn 9 save or come under this creature's control. At the end of each of this creature's turns, the controlled creature may remake the save, ending the effect on a success. 
+	Mind Shield (recharge 5-6): Creatures within 6 must pass a Cn 12 save in order to harm this creature. This effect ends at the end of this creature's next turn. 
+	Telepathic Message: This creature can send a mental message to any number of creatures within 1/8 mile. If the message is sent to multiple creatures, they all hear the same message. 
+	Flay (recharge 6): Target creature within 6 must pass a Cn 10 save or suffer mental wounds from a 1d6 damage die. The target's base Cn is reduced by the value of the wounds it took (1 for light, 2 for moderate, 3 for severe). The creature's base Cn increases by 1 at the end of each of its turns until it has returned to normal.  
+	Paralyze (recharge 6): Target creature within 6 must pass a Cn 13 save or be incapacitated until the end of its next turn. This ability can target up to two additional creatures, but the save difficulty is reduced by two for each extra target. 
+
+Abilities------------------------------------------------------------------------------------------------------------------------------------------------
+	Immunities: Mental 
+	Hivemind: The Cn save difficulties for this creature's actions is increased by X, where X is the number of other mind flayers within 1/4 mile. X cannot exceed 2. Whenever a mind flayer within 1/4 mile dies, this creature suffers unblockable wounds from a 1d4 damage die.  
+	Amphibious: This creature can breathe air and water. 
+	Neutral Buoyancy: While in water, this creature does not float or sink. On its turn, it may alter its vertical position in the water by up to two fathoms. 
+
+//////////////////////////////////////////////////////
+
+Mind Flayer Overlord
+NE Average Abberation
+	Every mind flayer hive has an overlord, who oversees the hive's operations and maintains order. Overlords are especially respected for their ability to penetrate creature's immunity to mental effects, ensuring that they cannot be overthrown by other flayers.
+Armor: 10
+Ag: 4 (+0)
+Cn: 7 (+3)
+In: 4 (+0)
+Lr: 5 (+1)
+Mg: 4 (+0)
+Pe: 6 (+2)
+Damage Levels: 7/5/5
+
+Senses---------------------------------------------------------------------------------------------------------------------------------------------------
+	Telepathy: 10 
+
+Movement-------------------------------------------------------------------------------------------------------------------------------------------------
+	Walking: 6 
+
+Attacks--------------------------------------------------------------------------------------------------------------------------------------------------
+	Staff: +1 Bludgeoning 
+
+Actions--------------------------------------------------------------------------------------------------------------------------------------------------
+	Mind Spike: Target creature within 8 must pass a Cn 12 save or suffer mental wounds from a 1d6 damage die. This ability can target up to five additional creatures, but the save difficulty is reduced by one for each extra target. 
+	Dominate (recharge 5-6): Target creature within 8 must pass a Cn 10 save or come under this creature's control. At the end of each of this creature's turns, the controlled creature may remake the save, ending the effect on a success. 
+	Mind Shield (recharge 5-6): Creatures within 8 must pass a Cn 12 save in order to harm this creature. This effect ends at the end of this creature's next turn. 
+	Telepathic Message: This creature can send a mental message to any number of creatures within 1/8 mile. If the message is sent to multiple creatures, they all hear the same message. 
+	Mental Impalement (recharge 6): Target creature within 8 must pass a Cn 15 save or suffer mental wounds from a 1d8 damage die. This damage ignores mental immunity. If the target is naturally immune to mental damage, double the number of wounds inflicted. 
+	Paralyze (recharge 6): Target creature within 8 must pass a Cn 15 save or be incapacitated until the end of its next turn. This ability can target up to two additional creatures, but the save difficulty is reduced by one for each extra target. 
+
+Abilities------------------------------------------------------------------------------------------------------------------------------------------------
+	Immunities: Mental 
+	Hivemind: The Cn save difficulties for this creature's actions is increased by X, where X is the number of other mind flayers within 1/4 mile. X cannot exceed 5. Whenever a mind flayer within 1/4 mile dies, this creature suffers unblockable wounds from a 1d4 damage die. When this creature dies, all other mind flayers within 1/4 mile suffer 1 severe wound.  
+	Amphibious: This creature can breathe air and water. 
+	Neutral Buoyancy: While in water, this creature does not float or sink. On its turn, it may alter its vertical position in the water by up to two fathoms. 
+
+//////////////////////////////////////////////////////
+
+Runic Manta
+NN Large Animal (fish)
+	These peaceful fish are covered in light-colored runes, which stand out against their dark skin. Most people suspect that they are the result of some Elvish tinkering, since they have magical abilities as well as rudimentary intelligence.
+Armor: 11
+Ag: 5 (+1)
+Cn: 4 (+0)
+In: 4 (+0)
+Lr: 2 (-2)
+Mg: 4 (+0)
+Pe: 0 (-4)
+Damage Levels: 5/4/4
+
+Movement-------------------------------------------------------------------------------------------------------------------------------------------------
+	Swimming: 8 
+
+Abilities------------------------------------------------------------------------------------------------------------------------------------------------
+	Aquatic: This creature can only breathe water. 
+
+Spell-like Abilities-------------------------------------------------------------------------------------------------------------------------------------
+	Arcane Barrier (1/day): 2 
+	Impenetrable Sphere (1/day): 0 
+	Shield (2/day): 3 
+	Magic Missile (1/day): 2 
+
+//////////////////////////////////////////////////////
+
+School Of Fish
+U Average Animal (fish) Swarm
+Armor: 13 (natural armor)
+Ag: 7 (+3)
+Cn: 4 (+0)
+In: 5 (+1)
+Lr: 0 (-4)
+Mg: 0 (-4)
+Pe: 0 (-4)
+Damage Levels: 10/5/4
+
+Movement-------------------------------------------------------------------------------------------------------------------------------------------------
+	Walking: 5 
+	Climbing: 5 
+
+Attacks--------------------------------------------------------------------------------------------------------------------------------------------------
+	Bites: +1 Slashing. If this creature has suffered one or more severe wounds, the attack is +2 Weak Slashing instead. 
+
+Abilities------------------------------------------------------------------------------------------------------------------------------------------------
+	Immunities: Mental, Poison 
+	Vulnerabilities: Acid, Cold, Fire 
+	Swarm: This creature can fit through any gaps small enough for a miniscule creature. Whenever this creature takes damage from an area of effect, it suffers one additional severe wound. 
+	Aquatic: This creature can only breathe water. 
+
+//////////////////////////////////////////////////////
+
+Shade
+NN Average Undead
+	Shades are just that, mere impressions of dead people. They roam the cold and dark regions of the world, seeking a release from their existence.
+Armor: 10
+Ag: 4 (+0)
+Cn: 4 (+0)
+In: 4 (+0)
+Lr: 4 (+0)
+Mg: 0 (-4)
+Pe: 0 (-4)
+Damage Levels: 0/0/1
+
+Senses---------------------------------------------------------------------------------------------------------------------------------------------------
+	Sense Living: 10 
+
+Actions--------------------------------------------------------------------------------------------------------------------------------------------------
+	Sap Strength (recharge 5-6): All living creatures within 3 must pass a Cn 12 save or suffer one light wound. 
+
+Abilities------------------------------------------------------------------------------------------------------------------------------------------------
+	Immunities: Mental, Physical, Poison 
+	Limited Incorporeality: This creature can pass through mundane objects no heavier than 10 pounds. 
+
+//////////////////////////////////////////////////////
+
+Shark
+U Large Animal (fish)
+Armor: 12 (natural armor)
+Ag: 5 (+1)
+Cn: 4 (+0)
+In: 6 (+2)
+Lr: 0 (-4)
+Mg: 5 (+1)
+Pe: 0 (-4)
+Damage Levels: 4/4/4
+
+Senses---------------------------------------------------------------------------------------------------------------------------------------------------
+	Keen Scent: 10 
+
+Movement-------------------------------------------------------------------------------------------------------------------------------------------------
+	Swimming: 8 
+
+Attacks--------------------------------------------------------------------------------------------------------------------------------------------------
+	Bite: +2 Slashing 
+
+Abilities------------------------------------------------------------------------------------------------------------------------------------------------
+	Lunge: If this creature moves more than four fathoms before attacking, its attack gets +2. 
+	Aquatic: This creature can only breathe water. 
+
+//////////////////////////////////////////////////////
+
 Skeleton
-Average Undead
+NE Average Undead
 Armor: 11 (natural armor)
 Ag: 1 (-3)
 Cn: 4 (+0)
@@ -31,42 +771,238 @@ Mg: 4 (+0)
 Pe: 0 (-4)
 Damage Levels: 2/3/1
 
-Movement---------------------------------------
-Walking: 6 
+Movement-------------------------------------------------------------------------------------------------------------------------------------------------
+	Walking: 6 
 
-Attacks---------------------------------------
-Ancient Sword: -1 Slashing 
+Attacks--------------------------------------------------------------------------------------------------------------------------------------------------
+	Ancient Sword: -1 Slashing 
 
-Abilities---------------------------------------
-Immunities: Mental, Poison 
-
+Abilities------------------------------------------------------------------------------------------------------------------------------------------------
+	Immunities: Mental, Poison 
 
 //////////////////////////////////////////////////////
-Zombie, Bog
-Average Undead
-Armor: 10
+
+Skeleton, Armored
+NE Average Undead
+Armor: 13 (armor)
 Ag: 0 (-4)
 Cn: 4 (+0)
 In: 0 (-4)
 Lr: 0 (-4)
 Mg: 5 (+1)
 Pe: 0 (-4)
-Damage Levels: 5/2/2
+Damage Levels: 2/3/2
 
-Movement---------------------------------------
-Walking: 4 
+Movement-------------------------------------------------------------------------------------------------------------------------------------------------
+	Walking: 6 
 
-Attacks---------------------------------------
-Slam: +1 Bludgeoning 
+Attacks--------------------------------------------------------------------------------------------------------------------------------------------------
+	Ancient Sword: +0 Slashing 
 
-Abilities---------------------------------------
-Horrific Stench: If a creature ends its turn adjacent to a bog zombie, that creature must pass a Cn 15 save or get -1 to all tests on its next turn. 
-Immunities: Mental, Poison 
-
+Abilities------------------------------------------------------------------------------------------------------------------------------------------------
+	Immunities: Mental, Poison 
 
 //////////////////////////////////////////////////////
+
+Small Mammal
+U Tiny Animal
+	This stat block can be used to represent any small wild mammal.
+Armor: 12
+Ag: 6 (+2)
+Cn: 4 (+0)
+In: 5 (+1)
+Lr: 0 (-4)
+Mg: 1 (-3)
+Pe: 0 (-4)
+Damage Levels: 0/0/1
+
+Senses---------------------------------------------------------------------------------------------------------------------------------------------------
+	Keen Scent: 4 
+
+Movement-------------------------------------------------------------------------------------------------------------------------------------------------
+	Walking: 4 
+
+Attacks--------------------------------------------------------------------------------------------------------------------------------------------------
+	Bite: +0 Weak Piercing. 
+
+//////////////////////////////////////////////////////
+
+Spider Swarm
+U Average Animal Swarm
+Armor: 12 (natural armor)
+Ag: 6 (+2)
+Cn: 4 (+0)
+In: 4 (+0)
+Lr: 0 (-4)
+Mg: 0 (-4)
+Pe: 0 (-4)
+Damage Levels: 10/5/4
+
+Movement-------------------------------------------------------------------------------------------------------------------------------------------------
+	Walking: 5 
+	Climbing: 5 
+
+Attacks--------------------------------------------------------------------------------------------------------------------------------------------------
+	Bites: +2 Piercing Poison. If this creature has suffered two or more severe wounds, the attack is +3 Weak Piercing Poison instead. 
+
+Abilities------------------------------------------------------------------------------------------------------------------------------------------------
+	Immunities: Mental, Poison 
+	Vulnerabilities: Acid, Cold, Fire 
+	Swarm: This creature can fit through any gaps small enough for a miniscule creature. Whenever this creature takes damage from an area of effect, it suffers one additional severe wound. 
+
+//////////////////////////////////////////////////////
+
+Stingray
+U Small Animal (fish)
+Armor: 11
+Ag: 5 (+1)
+Cn: 4 (+0)
+In: 4 (+0)
+Lr: 0 (-4)
+Mg: 2 (-2)
+Pe: 0 (-4)
+Damage Levels: 2/1/1
+
+Movement-------------------------------------------------------------------------------------------------------------------------------------------------
+	Swimming: 4 
+
+Attacks--------------------------------------------------------------------------------------------------------------------------------------------------
+	Tail Barb: +1 Poison Slashing. 
+
+Abilities------------------------------------------------------------------------------------------------------------------------------------------------
+	Aquatic: This creature can only breathe water. 
+
+//////////////////////////////////////////////////////
+
+Stone Golem
+A Large Construct
+Armor: 14 (natural armor)
+Ag: 2 (-2)
+Cn: 4 (+0)
+In: 0 (-4)
+Lr: 0 (-4)
+Mg: 6 (+2)
+Pe: 0 (-4)
+Damage Levels: 5/6/6
+
+Senses---------------------------------------------------------------------------------------------------------------------------------------------------
+	Blindsight: 8 
+
+Movement-------------------------------------------------------------------------------------------------------------------------------------------------
+	Walking: 6 
+
+Attacks--------------------------------------------------------------------------------------------------------------------------------------------------
+	Smash: +3 Bludgeoning 
+
+Abilities------------------------------------------------------------------------------------------------------------------------------------------------
+	Immunities: Mental, Poison 
+
+//////////////////////////////////////////////////////
+
+Thrall
+U Average Humanoid
+	Thralls are slaves who were turned into mental vegetables following prolonged servitude to mind flayers.
+Armor: 10
+Ag: 4 (+0)
+Cn: 0 (-4)
+In: 2 (-2)
+Lr: 0 (-4)
+Mg: 4 (+0)
+Pe: 0 (-4)
+Damage Levels: 4/2/2
+
+Movement-------------------------------------------------------------------------------------------------------------------------------------------------
+	Walking: 6 
+
+Attacks--------------------------------------------------------------------------------------------------------------------------------------------------
+	Claw: -2 Slashing. 
+
+Abilities------------------------------------------------------------------------------------------------------------------------------------------------
+	Unconditional Obedience: This creature will obey any telepathic orders given to it. If more than one creature is giving it telepathic orders, it will obey the one with the highet Cn + Pe bonus. If not given any telepathic commands, this creature will obey the last instructions given to it, regardless of who issued the order. 
+
+//////////////////////////////////////////////////////
+
+Wolf
+U Average Animal
+Armor: 10
+Ag: 4 (+0)
+Cn: 4 (+0)
+In: 5 (+1)
+Lr: 0 (-4)
+Mg: 4 (+0)
+Pe: 0 (-4)
+Damage Levels: 4/3/2
+
+Senses---------------------------------------------------------------------------------------------------------------------------------------------------
+	Keen Scent: 10 
+
+Movement-------------------------------------------------------------------------------------------------------------------------------------------------
+	Walking: 8 
+
+Attacks--------------------------------------------------------------------------------------------------------------------------------------------------
+	Bite: +1 Piercing 
+
+//////////////////////////////////////////////////////
+
+Wood Golem
+A Large Construct
+Armor: 12 (natural armor)
+Ag: 3 (-1)
+Cn: 4 (+0)
+In: 0 (-4)
+Lr: 0 (-4)
+Mg: 5 (+1)
+Pe: 0 (-4)
+Damage Levels: 6/5/5
+
+Senses---------------------------------------------------------------------------------------------------------------------------------------------------
+	Blindsight: 7 
+
+Movement-------------------------------------------------------------------------------------------------------------------------------------------------
+	Walking: 6 
+
+Attacks--------------------------------------------------------------------------------------------------------------------------------------------------
+	Smash: +1 Bludgeoning 
+	Shower of Splinters (recharge 5-6): +3 Weak Piercing with a range of 3. This attack can target two adjacent creatures, as long as both are within range. When this creature makes this attack, it suffers one light wound. 
+
+Abilities------------------------------------------------------------------------------------------------------------------------------------------------
+	Immunities: Mental, Poison 
+	Vulnerabilities: Fire 
+	Highly Flammable: When this creature takes any number of Fire wounds, it bursts into flame. When a creature ends its turn next to this creature while it's burning, that creature must pass a Cn 15 save or suffer one light Fire wound. At the start of each of its turns while burning, this creature suffers Fire wounds from a 1d4 damage die. While burning, this creature's attacks get +1 and deal Fire damage. 
+
+//////////////////////////////////////////////////////
+
+Wraith
+CE Average Undead
+Armor: 10
+Ag: 4 (+0)
+Cn: 5 (+1)
+In: 4 (+0)
+Lr: 4 (+0)
+Mg: 5 (+1)
+Pe: 0 (-4)
+Damage Levels: 2/2/3
+
+Senses---------------------------------------------------------------------------------------------------------------------------------------------------
+	Sense Living: 15 
+
+Movement-------------------------------------------------------------------------------------------------------------------------------------------------
+	Hover: 6 
+
+Attacks--------------------------------------------------------------------------------------------------------------------------------------------------
+	Slash: +2 Necrotic Slashing 
+
+Actions--------------------------------------------------------------------------------------------------------------------------------------------------
+	Sap Strength: All living creatures within 3 must pass a Cn 12 save or suffer one light wound. 
+
+Abilities------------------------------------------------------------------------------------------------------------------------------------------------
+	Immunities: Mental, Physical, Poison 
+	Incorporeal: This creature can pass through mundane, nonliving objects, but cannot end its turn in them. 
+
+//////////////////////////////////////////////////////
+
 Zombie
-Average Undead
+NE Average Undead
 Armor: 10
 Ag: 0 (-4)
 Cn: 4 (+0)
@@ -76,19 +1012,42 @@ Mg: 5 (+1)
 Pe: 0 (-4)
 Damage Levels: 5/2/1
 
-Movement---------------------------------------
-Walking: 4 
+Movement-------------------------------------------------------------------------------------------------------------------------------------------------
+	Walking: 4 
 
-Attacks---------------------------------------
-Slam: +1 Bludgeoning 
+Attacks--------------------------------------------------------------------------------------------------------------------------------------------------
+	Slam: +1 Bludgeoning 
 
-Abilities---------------------------------------
-Immunities: Mental, Poison 
-
+Abilities------------------------------------------------------------------------------------------------------------------------------------------------
+	Immunities: Mental, Poison 
 
 //////////////////////////////////////////////////////
+
+Zombie, Bog
+NE Average Undead
+Armor: 10
+Ag: 0 (-4)
+Cn: 4 (+0)
+In: 0 (-4)
+Lr: 0 (-4)
+Mg: 5 (+1)
+Pe: 0 (-4)
+Damage Levels: 5/2/2
+
+Movement-------------------------------------------------------------------------------------------------------------------------------------------------
+	Walking: 4 
+
+Attacks--------------------------------------------------------------------------------------------------------------------------------------------------
+	Slam: +1 Bludgeoning 
+
+Abilities------------------------------------------------------------------------------------------------------------------------------------------------
+	Horrific Stench: If a creature ends its turn adjacent to a bog zombie, that creature must pass a Cn 15 save or get -1 to all tests on its next turn. 
+	Immunities: Mental, Poison 
+
+//////////////////////////////////////////////////////
+
 Zombie, Frozen
-Average Undead
+NE Average Undead
 Armor: 12 (natural armor)
 Ag: 0 (-4)
 Cn: 5 (+1)
@@ -98,20 +1057,20 @@ Mg: 5 (+1)
 Pe: 0 (-4)
 Damage Levels: 5/3/2
 
-Movement---------------------------------------
-Walking: 3 
+Movement-------------------------------------------------------------------------------------------------------------------------------------------------
+	Walking: 3 
 
-Attacks---------------------------------------
-Slam: +2 Bludgeoning and slashing 
+Attacks--------------------------------------------------------------------------------------------------------------------------------------------------
+	Slam: +2 Bludgeoning and slashing 
 
-Abilities---------------------------------------
-Immunities: Cold, Mental, Poison 
-Vulnerabilities: Fire 
-
+Abilities------------------------------------------------------------------------------------------------------------------------------------------------
+	Immunities: Cold, Mental, Poison 
+	Vulnerabilities: Fire 
 
 //////////////////////////////////////////////////////
+
 Zombie Horror
-Large Undead
+NE Large Undead
 Armor: 11 (natural armor)
 Ag: 0 (-4)
 Cn: 5 (+1)
@@ -121,15 +1080,39 @@ Mg: 6 (+2)
 Pe: 0 (-4)
 Damage Levels: 5/4/4
 
-Movement---------------------------------------
-Walking: 6 
+Movement-------------------------------------------------------------------------------------------------------------------------------------------------
+	Walking: 6 
 
-Attacks---------------------------------------
-Slam: +3/+0 Bludgeoning 
+Attacks--------------------------------------------------------------------------------------------------------------------------------------------------
+	Slam: +3/+1 Bludgeoning 
 
-Abilities---------------------------------------
-Multiattack: This creature may make two additional Slam attacks as long as it has not suffered any severe wounds. It may make one additional Slam attack as long as it has not suffered more than three severe wounds. 
-Immunities: Mental, Poison 
-
+Abilities------------------------------------------------------------------------------------------------------------------------------------------------
+	Multiattack: This creature may make two additional Slam attacks as long as it has not suffered any severe wounds. It may make one additional Slam attack as long as it has not suffered more than three severe wounds. 
+	Immunities: Mental, Poison 
 
 //////////////////////////////////////////////////////
+
+Zombie, Sand
+NE Average Undead
+Armor: 11 (natural armor)
+Ag: 3 (-1)
+Cn: 4 (+0)
+In: 0 (-4)
+Lr: 0 (-4)
+Mg: 4 (+0)
+Pe: 0 (-4)
+Damage Levels: 2/2/1
+
+Movement-------------------------------------------------------------------------------------------------------------------------------------------------
+	Walking: 6 
+
+Attacks--------------------------------------------------------------------------------------------------------------------------------------------------
+	Slam: +0 Bludgeoning 
+
+Abilities------------------------------------------------------------------------------------------------------------------------------------------------
+	Immunities: Mental, Poison 
+	Resistances: Fire 
+	Water Weakness: While this creature is at least partially submerged, it suffers one moderate wound at the end of each of its turns. 
+
+//////////////////////////////////////////////////////
+

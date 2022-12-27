@@ -79,24 +79,48 @@ margin_right = 100.0
 [node name="NewPage" type="Button" parent="MenuButtons"]
 margin_right = 100.0
 margin_bottom = 25.0
+disabled = true
 text = "Add Page"
 
-[node name="Back" type="Button" parent="MenuButtons"]
+[node name="Duplicate" type="Button" parent="MenuButtons"]
 margin_top = 29.0
 margin_right = 100.0
 margin_bottom = 54.0
-text = "Back"
+disabled = true
+text = "Duplicate"
 
-[node name="Save" type="Button" parent="MenuButtons"]
+[node name="Edit" type="Button" parent="MenuButtons"]
 margin_top = 58.0
 margin_right = 100.0
 margin_bottom = 83.0
-text = "Save Page"
+disabled = true
+text = "Edit"
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MenuButtons"]
+[node name="Remove" type="Button" parent="MenuButtons"]
 margin_top = 87.0
 margin_right = 100.0
 margin_bottom = 112.0
+disabled = true
+text = "Remove"
+
+[node name="Save" type="Button" parent="MenuButtons"]
+margin_top = 116.0
+margin_right = 100.0
+margin_bottom = 141.0
+disabled = true
+text = "Save Page"
+
+[node name="Back" type="Button" parent="MenuButtons"]
+margin_top = 145.0
+margin_right = 100.0
+margin_bottom = 170.0
+disabled = true
+text = "Back"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MenuButtons"]
+margin_top = 174.0
+margin_right = 100.0
+margin_bottom = 199.0
 
 [node name="Left" type="TextureButton" parent="MenuButtons/HBoxContainer"]
 margin_right = 16.0
@@ -121,44 +145,62 @@ texture_pressed = SubResource( 6 )
 texture_hover = SubResource( 7 )
 texture_disabled = SubResource( 8 )
 
-[node name="Edit" type="Button" parent="MenuButtons"]
-margin_top = 116.0
-margin_right = 100.0
-margin_bottom = 141.0
-text = "Edit"
-
-[node name="Duplicate" type="Button" parent="MenuButtons"]
-margin_top = 145.0
-margin_right = 100.0
-margin_bottom = 170.0
-text = "Duplicate"
-
-[node name="Remove" type="Button" parent="MenuButtons"]
-margin_top = 174.0
-margin_right = 100.0
-margin_bottom = 199.0
-text = "Remove"
-
 [node name="Print" type="Button" parent="MenuButtons"]
 margin_top = 203.0
 margin_right = 100.0
 margin_bottom = 228.0
+disabled = true
 text = "Save as Text"
 
-[node name="Quit" type="Button" parent="MenuButtons"]
+[node name="New" type="Button" parent="MenuButtons"]
 margin_top = 232.0
 margin_right = 100.0
 margin_bottom = 257.0
+text = "New File"
+
+[node name="Load" type="Button" parent="MenuButtons"]
+margin_top = 261.0
+margin_right = 100.0
+margin_bottom = 286.0
+text = "Load"
+
+[node name="SaveAs" type="Button" parent="MenuButtons"]
+margin_top = 290.0
+margin_right = 100.0
+margin_bottom = 315.0
+disabled = true
+text = "Save As"
+
+[node name="Quit" type="Button" parent="MenuButtons"]
+margin_top = 319.0
+margin_right = 100.0
+margin_bottom = 344.0
 text = "Quit"
 
+[node name="FileDialog" type="FileDialog" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = 30.0
+margin_right = -10.0
+margin_bottom = -10.0
+window_title = ""
+dialog_hide_on_ok = true
+access = 2
+filters = PoolStringArray( "*.dct ; Dict Files" )
+
 [connection signal="pressed" from="MenuButtons/NewPage" to="." method="_on_NewPage_pressed"]
-[connection signal="pressed" from="MenuButtons/Back" to="." method="_on_Back_pressed"]
+[connection signal="pressed" from="MenuButtons/Duplicate" to="." method="_on_Duplicate_pressed"]
+[connection signal="pressed" from="MenuButtons/Edit" to="." method="_on_Edit_pressed"]
+[connection signal="pressed" from="MenuButtons/Remove" to="." method="_on_Remove_pressed"]
 [connection signal="pressed" from="MenuButtons/Save" to="." method="_on_Save_pressed"]
+[connection signal="pressed" from="MenuButtons/Back" to="." method="_on_Back_pressed"]
 [connection signal="pressed" from="MenuButtons/HBoxContainer/Left" to="." method="_on_Left_pressed"]
 [connection signal="text_entered" from="MenuButtons/HBoxContainer/IndexField" to="." method="_on_IndexField_text_entered"]
 [connection signal="pressed" from="MenuButtons/HBoxContainer/Right" to="." method="_on_Right_pressed"]
-[connection signal="pressed" from="MenuButtons/Edit" to="." method="_on_Edit_pressed"]
-[connection signal="pressed" from="MenuButtons/Duplicate" to="." method="_on_Duplicate_pressed"]
-[connection signal="pressed" from="MenuButtons/Remove" to="." method="_on_Remove_pressed"]
 [connection signal="pressed" from="MenuButtons/Print" to="." method="_on_Print_pressed"]
+[connection signal="pressed" from="MenuButtons/New" to="." method="_on_New_pressed"]
+[connection signal="pressed" from="MenuButtons/Load" to="." method="_on_Load_pressed"]
+[connection signal="pressed" from="MenuButtons/SaveAs" to="." method="_on_SaveAs_pressed"]
 [connection signal="pressed" from="MenuButtons/Quit" to="." method="_on_Quit_pressed"]
+[connection signal="file_selected" from="FileDialog" to="." method="_on_FileDialog_file_selected"]
