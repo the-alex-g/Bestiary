@@ -157,7 +157,6 @@ func _add_item(info:Dictionary = {})->void:
 func _save()->void:
 	# this saves ALL of the entries in _bestiary_info. Otherwise, it doesn't work.
 	if _path != "":
-		print("saving file")
 		var save_file := File.new()
 		# warning-ignore:return_value_discarded
 		save_file.open(_path, File.WRITE)
@@ -167,7 +166,6 @@ func _save()->void:
 		
 		_set_mode(Mode.READING)
 	else:
-		print("no path")
 		_set_mode(Mode.SAVING)
 		_file_dialog.mode = FileDialog.MODE_SAVE_FILE
 		_file_dialog.popup()
@@ -289,6 +287,7 @@ func _set_mode(value:int)->void:
 			_new_page_button.disabled = true
 			_print_button.disabled = true
 			_duplicate_button.disabled = true
+	$MenuButtons/SaveAs.disabled = false
 
 
 func _on_Print_pressed()->void:
