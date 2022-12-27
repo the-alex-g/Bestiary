@@ -64,12 +64,6 @@ func _input(event:InputEvent)->void:
 			16777231: # left arrow
 				if _mode == Mode.READING:
 					_on_Previous_pressed()
-	elif event is InputEventMouseButton and _mode == Mode.READING and event.is_pressed():
-		match event.button_index:
-			4:
-				_on_Previous_pressed()
-			5:
-				_on_Next_pressed()
 
 
 func _compile_master_dictionary()->void:
