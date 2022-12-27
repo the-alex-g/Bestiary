@@ -26,7 +26,7 @@ onready var _file_dialog : FileDialog = $FileDialog
 
 func _input(event:InputEvent)->void:
 	if event is InputEventKey and event.is_pressed():
-		print(OS.get_scancode_string(event.get_scancode_with_modifiers()), ": ", event.get_scancode_with_modifiers())
+		#print(OS.get_scancode_string(event.get_scancode_with_modifiers()), ": ", event.get_scancode_with_modifiers())
 		match event.get_scancode_with_modifiers():
 			268435525: # ctrl-e
 				if _mode == Mode.READING:
