@@ -15,7 +15,7 @@ script = ExtResource( 1 )
 
 [node name="Container" type="VBoxContainer" parent="."]
 margin_right = 185.0
-margin_bottom = 591.0
+margin_bottom = 611.0
 
 [node name="HeaderField" parent="Container" instance=ExtResource( 3 )]
 margin_right = 185.0
@@ -52,53 +52,60 @@ margin_bottom = 451.0
 [node name="FieldContainer" type="VBoxContainer" parent="Container"]
 margin_top = 455.0
 margin_right = 185.0
-margin_bottom = 591.0
+margin_bottom = 611.0
 
-[node name="Senses" parent="Container/FieldContainer" instance=ExtResource( 2 )]
+[node name="Languages" parent="Container/FieldContainer" instance=ExtResource( 2 )]
 margin_right = 185.0
 margin_bottom = 16.0
+field_name = "Languages"
+sections = PoolStringArray( "Language" )
+
+[node name="Senses" parent="Container/FieldContainer" instance=ExtResource( 2 )]
+margin_top = 20.0
+margin_right = 185.0
+margin_bottom = 36.0
 field_name = "Senses"
 sections = PoolStringArray( "Sense", "Range" )
 
 [node name="Movement" parent="Container/FieldContainer" instance=ExtResource( 2 )]
-margin_top = 20.0
+margin_top = 40.0
 margin_right = 185.0
-margin_bottom = 36.0
+margin_bottom = 56.0
 field_name = "Movement"
 sections = PoolStringArray( "Movement", "Speed" )
 
 [node name="Attacks" parent="Container/FieldContainer" instance=ExtResource( 2 )]
-margin_top = 40.0
+margin_top = 60.0
 margin_right = 185.0
-margin_bottom = 56.0
+margin_bottom = 76.0
 field_name = "Attacks"
 sections = PoolStringArray( "Name", "Description" )
 
 [node name="Actions" parent="Container/FieldContainer" instance=ExtResource( 2 )]
-margin_top = 60.0
+margin_top = 80.0
 margin_right = 185.0
-margin_bottom = 76.0
+margin_bottom = 96.0
 field_name = "Actions"
 sections = PoolStringArray( "Name", "Description" )
 
 [node name="Abilities" parent="Container/FieldContainer" instance=ExtResource( 2 )]
-margin_top = 80.0
+margin_top = 100.0
 margin_right = 185.0
-margin_bottom = 96.0
+margin_bottom = 116.0
 field_name = "Abilities"
 sections = PoolStringArray( "Name", "Description" )
 
 [node name="Spells" parent="Container/FieldContainer" instance=ExtResource( 2 )]
-margin_top = 100.0
+margin_top = 120.0
 margin_right = 185.0
-margin_bottom = 116.0
+margin_bottom = 136.0
 field_name = "Spells"
 sections = PoolStringArray( "Spell", "Casting Bonus", "Strength" )
 
 [node name="SpellLikes" parent="Container/FieldContainer" instance=ExtResource( 2 )]
-margin_top = 120.0
+margin_top = 140.0
 margin_right = 185.0
-margin_bottom = 136.0
+margin_bottom = 156.0
 field_name = "Spell-like Abilities"
 sections = PoolStringArray( "Spell", "Strength" )
 

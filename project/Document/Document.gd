@@ -117,7 +117,7 @@ func _get_readable_from_info(info:Dictionary)->String:
 				if section.values().find(value) == 0:
 					readable += "	"
 				readable += value
-				if section.values().find(value) == 0:
+				if section.values().find(value) == 0 and section.size() > 1:
 					readable += ":"
 				readable += " "
 			readable += "\n"
