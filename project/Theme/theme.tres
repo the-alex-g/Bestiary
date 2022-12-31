@@ -1,9 +1,21 @@
-[gd_resource type="Theme" load_steps=5 format=2]
+[gd_resource type="Theme" load_steps=9 format=2]
 
 [ext_resource path="res://Theme/light.tres" type="StyleBox" id=1]
 [ext_resource path="res://Theme/dark.tres" type="StyleBox" id=2]
 [ext_resource path="res://Theme/normal.tres" type="StyleBox" id=3]
 [ext_resource path="res://Theme/font.tres" type="DynamicFont" id=4]
+[ext_resource path="res://Theme/dark_two.tres" type="StyleBox" id=5]
+[ext_resource path="res://Buttons/Checkbox.png" type="Texture" id=6]
+
+[sub_resource type="AtlasTexture" id=1]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 0, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=2]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 0, 16, 16, 16 )
 
 [resource]
 default_font = ExtResource( 4 )
@@ -13,8 +25,26 @@ Button/styles/disabled = ExtResource( 2 )
 Button/styles/hover = ExtResource( 1 )
 Button/styles/normal = ExtResource( 3 )
 Button/styles/pressed = ExtResource( 3 )
-ItemList/styles/bg = ExtResource( 2 )
-ItemList/styles/selected = ExtResource( 3 )
+HScrollBar/styles/grabber = ExtResource( 3 )
+HScrollBar/styles/grabber_highlight = ExtResource( 1 )
+HScrollBar/styles/grabber_pressed = ExtResource( 3 )
+HScrollBar/styles/scroll = ExtResource( 5 )
+HScrollBar/styles/scroll_focus = ExtResource( 5 )
 LineEdit/styles/focus = ExtResource( 3 )
 LineEdit/styles/normal = ExtResource( 2 )
+OptionButton/colors/font_color_disabled = Color( 0.807843, 0.807843, 0.807843, 1 )
+OptionButton/colors/font_color_pressed = Color( 0.203922, 0.203922, 0.203922, 1 )
+OptionButton/styles/disabled = ExtResource( 2 )
+OptionButton/styles/hover = ExtResource( 1 )
+OptionButton/styles/normal = ExtResource( 3 )
+OptionButton/styles/pressed = ExtResource( 3 )
 Panel/styles/panel = ExtResource( 2 )
+PopupMenu/icons/radio_checked = SubResource( 1 )
+PopupMenu/icons/radio_unchecked = SubResource( 2 )
+PopupMenu/styles/hover = ExtResource( 3 )
+PopupMenu/styles/panel = ExtResource( 2 )
+VScrollBar/styles/grabber = ExtResource( 3 )
+VScrollBar/styles/grabber_highlight = ExtResource( 1 )
+VScrollBar/styles/grabber_pressed = ExtResource( 3 )
+VScrollBar/styles/scroll = ExtResource( 5 )
+VScrollBar/styles/scroll_focus = ExtResource( 5 )

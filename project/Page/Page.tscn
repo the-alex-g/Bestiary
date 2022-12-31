@@ -15,7 +15,7 @@ script = ExtResource( 1 )
 
 [node name="Container" type="VBoxContainer" parent="."]
 margin_right = 185.0
-margin_bottom = 611.0
+margin_bottom = 496.0
 
 [node name="HeaderField" parent="Container" instance=ExtResource( 3 )]
 margin_right = 185.0
@@ -27,32 +27,33 @@ margin_right = 185.0
 margin_bottom = 52.0
 placeholder_text = "Flavor Text"
 
-[node name="SizeList" type="ItemList" parent="Container"]
+[node name="SizeList" type="OptionButton" parent="Container"]
 margin_top = 56.0
 margin_right = 185.0
-margin_bottom = 191.0
-items = [ "Miniscule", null, false, "Tiny", null, false, "Small", null, false, "Average", null, false, "Large", null, false, "Huge", null, false, "Vast", null, false ]
-auto_height = true
+margin_bottom = 76.0
+text = "Miniscule"
+items = [ "Miniscule", null, false, 0, null, "Tiny", null, false, 1, null, "Small", null, false, 2, null, "Average", null, false, 3, null, "Large", null, false, 4, null, "Huge", null, false, 5, null, "Vast", null, false, 6, null ]
+selected = 0
 
 [node name="ArmorField" parent="Container" instance=ExtResource( 6 )]
-margin_top = 195.0
+margin_top = 80.0
 margin_right = 185.0
-margin_bottom = 219.0
+margin_bottom = 104.0
 
 [node name="StatField" parent="Container" instance=ExtResource( 5 )]
-margin_top = 223.0
+margin_top = 108.0
 margin_right = 185.0
-margin_bottom = 405.0
+margin_bottom = 290.0
 
 [node name="DamageField" parent="Container" instance=ExtResource( 4 )]
-margin_top = 409.0
+margin_top = 294.0
 margin_right = 185.0
-margin_bottom = 451.0
+margin_bottom = 336.0
 
 [node name="FieldContainer" type="VBoxContainer" parent="Container"]
-margin_top = 455.0
+margin_top = 340.0
 margin_right = 185.0
-margin_bottom = 611.0
+margin_bottom = 496.0
 
 [node name="Languages" parent="Container/FieldContainer" instance=ExtResource( 2 )]
 margin_right = 185.0

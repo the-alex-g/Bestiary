@@ -7,7 +7,7 @@ var page_info : Dictionary setget , _get_info
 
 onready var _field_container := $Container/FieldContainer
 onready var _header_field := $Container/HeaderField
-onready var _size_list := $Container/SizeList
+onready var _size_list : OptionButton = $Container/SizeList
 onready var _stat_field := $Container/StatField
 onready var _damage_field := $Container/DamageField
 onready var _armor_field := $Container/ArmorField
@@ -26,8 +26,8 @@ func _get_info()->Dictionary:
 		"damage":_damage_field.damage_info
 	}
 	# get size
-	if _size_list.get_selected_items().size() > 0:
-		var index = _size_list.get_selected_items()[0]
+	if _size_list.selected >= 0:
+		var index = _size_list.selected
 		info["size"] = _size_list.get_item_text(index)
 		# this is for loading and editing later
 		info["size_index"] = index
@@ -43,7 +43,7 @@ func _get_info()->Dictionary:
 func refresh()->void:
 	emit_signal("refresh")
 	_flavor_text.text = ""
-	_size_list.unselect_all()
+	_size_list.select(-1)
 	for field in _field_container.get_children():
 		field.refresh()
 

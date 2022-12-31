@@ -70,7 +70,9 @@ visible = false
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = -408.0
+margin_top = 5.0
 margin_right = 408.0
+margin_bottom = -5.0
 
 [node name="MenuButtons" type="VBoxContainer" parent="."]
 anchor_bottom = 1.0

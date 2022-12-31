@@ -24,6 +24,11 @@ onready var _duplicate_button : Button = $MenuButtons/Duplicate
 onready var _file_dialog : FileDialog = $FileDialog
 
 
+func _ready()->void:
+	_display_page.hide()
+	_page.hide()
+
+
 func _input(event:InputEvent)->void:
 	if event is InputEventKey and event.is_pressed():
 		#print(OS.get_scancode_string(event.get_scancode_with_modifiers()), ": ", event.get_scancode_with_modifiers())
