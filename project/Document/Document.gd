@@ -125,11 +125,6 @@ func _get_readable_from_info(info:Dictionary)->String:
 	return readable
 
 
-func _on_NewPage_pressed()->void:
-	_set_mode(Mode.WRITING)
-	_open_page_editor()
-
-
 func _open_page_editor(info := {})->void:
 	_page.visible = true
 	_display_page.visible = false
@@ -139,11 +134,6 @@ func _open_page_editor(info := {})->void:
 		_page.refresh()
 	else:
 		_page.build(_bestiary_info[_page_index])
-
-
-func _on_Save_pressed()->void:
-	_add_item(_page.page_info)
-	_reload_page()
 
 
 func _add_item(info:Dictionary = {})->void:
@@ -226,32 +216,6 @@ func _reload_page()->void:
 	_change_page(0)
 
 
-func _on_Edit_pressed()->void:
-	_set_mode(Mode.EDITING)
-	_page.build(_bestiary_info[_page_index])
-
-
-func _on_Remove_pressed()->void:
-	_bestiary_info.remove(_page_index)
-	if _bestiary_info.size() > 0:
-		_reload_page()
-	else:
-		_set_mode(Mode.WRITING)
-	_save()
-
-
-func _on_Left_pressed()->void:
-	_change_page(-1)
-
-
-func _on_Right_pressed()->void:
-	_change_page(1)
-
-
-func _on_Back_pressed()->void:
-	_set_mode(Mode.READING)
-
-
 func _set_mode(value:int)->void:
 	_mode = value
 	
@@ -290,14 +254,6 @@ func _set_mode(value:int)->void:
 	$MenuButtons/SaveAs.disabled = false
 
 
-func _on_Print_pressed()->void:
-	_set_mode(Mode.PRINTING)
-	_file_dialog.mode = FileDialog.MODE_SAVE_FILE
-	_file_dialog.filters = ["*.txt ; Text File"]
-	_file_dialog.popup()
-	#_save_as_text()
-
-
 func _save_as_text(to:String)->void:
 	var text_file := File.new()
 	# warning-ignore:return_value_discarded
@@ -306,24 +262,6 @@ func _save_as_text(to:String)->void:
 		text_file.store_string(_get_readable_from_info(creature))
 		text_file.store_string("//////////////////////////////////////////////////////\n\n")
 	text_file.close()
-
-
-func _on_Quit_pressed()->void:
-	get_tree().quit()
-
-
-func _on_Duplicate_pressed()->void:
-	_set_mode(Mode.WRITING)
-	_page.build(_bestiary_info[_page_index])
-
-
-func _on_IndexField_text_entered(new_text:String)->void:
-	if _bestiary_info.size() > 0:
-		_page_index = int(new_text) - 1
-		_page_index %= _bestiary_info.size()
-		if _page_index < 0:
-			_page_index = _bestiary_info.size() + _page_index
-		_display_page.text = _get_readable_from_info(_bestiary_info[_page_index])
 
 
 func _on_FileDialog_file_selected(path:String)->void:
@@ -353,3 +291,64 @@ func _on_Load_pressed()->void:
 func _on_SaveAs_pressed()->void:
 	_path = ""
 	_save()
+
+
+func _on_NewPage_pressed()->void:
+	_set_mode(Mode.WRITING)
+	_open_page_editor()
+
+
+func _on_Left_pressed()->void:
+	_change_page(-1)
+
+
+func _on_Right_pressed()->void:
+	_change_page(1)
+
+
+func _on_Back_pressed()->void:
+	_set_mode(Mode.READING)
+
+
+func _on_Quit_pressed()->void:
+	get_tree().quit()
+
+
+func _on_Duplicate_pressed()->void:
+	_set_mode(Mode.WRITING)
+	_page.build(_bestiary_info[_page_index])
+
+
+func _on_Edit_pressed()->void:
+	_set_mode(Mode.EDITING)
+	_page.build(_bestiary_info[_page_index])
+
+
+func _on_Remove_pressed()->void:
+	_bestiary_info.remove(_page_index)
+	if _bestiary_info.size() > 0:
+		_reload_page()
+	else:
+		_set_mode(Mode.WRITING)
+	_save()
+
+
+func _on_Print_pressed()->void:
+	_set_mode(Mode.PRINTING)
+	_file_dialog.mode = FileDialog.MODE_SAVE_FILE
+	_file_dialog.filters = ["*.txt ; Text File"]
+	_file_dialog.popup()
+
+
+func _on_Save_pressed()->void:
+	_add_item(_page.page_info)
+	_reload_page()
+
+
+func _on_IndexField_text_entered(new_text:String)->void:
+	if _bestiary_info.size() > 0:
+		_page_index = int(new_text) - 1
+		_page_index %= _bestiary_info.size()
+		if _page_index < 0:
+			_page_index = _bestiary_info.size() + _page_index
+		_display_page.text = _get_readable_from_info(_bestiary_info[_page_index])

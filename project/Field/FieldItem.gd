@@ -3,6 +3,8 @@ extends HBoxContainer
 
 signal removed
 
+var info : Dictionary setget , _get_info
+
 
 func _init(fields:PoolStringArray, field_contents:Dictionary)->void:
 	for field in fields:
@@ -24,10 +26,9 @@ func _on_removed(_id:int)->void:
 	queue_free()
 
 
-func get_text()->Dictionary:
+func _get_info()->Dictionary:
 	var text := {}
-	for i in get_child_count():
-		if i < get_child_count() - 1:
-			var field : LineEdit = get_child(i)
-			text[field.placeholder_text] = field.text
+	for i in get_child_count() - 1:
+		var field : LineEdit = get_child(i)
+		text[field.placeholder_text] = field.text
 	return text

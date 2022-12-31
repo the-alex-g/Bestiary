@@ -3,6 +3,8 @@ extends ScrollContainer
 
 signal refresh
 
+var page_info : Dictionary setget , _get_info
+
 onready var _field_container := $Container/FieldContainer
 onready var _header_field := $Container/HeaderField
 onready var _size_list := $Container/SizeList
@@ -10,8 +12,6 @@ onready var _stat_field := $Container/StatField
 onready var _damage_field := $Container/DamageField
 onready var _armor_field := $Container/ArmorField
 onready var _flavor_text := $Container/FlavorText
-
-var page_info : Dictionary setget , _get_info
 
 
 func _get_info()->Dictionary:
