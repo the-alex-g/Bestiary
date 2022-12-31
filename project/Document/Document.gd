@@ -149,9 +149,9 @@ func _add_item(info:Dictionary = {})->void:
 	_save()
 
 
-func _save()->void:
+func _save(new_path:bool = false)->void:
 	# this saves ALL of the entries in _bestiary_info. Otherwise, it doesn't work.
-	if _path != "":
+	if _path != "" and not new_path: # if there is a path
 		var save_file := File.new()
 		# warning-ignore:return_value_discarded
 		save_file.open(_path, File.WRITE)
@@ -294,8 +294,7 @@ func _on_Load_pressed()->void:
 
 
 func _on_SaveAs_pressed()->void:
-	_path = ""
-	_save()
+	_save(true)
 
 
 func _on_NewPage_pressed()->void:
