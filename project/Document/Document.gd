@@ -3,6 +3,7 @@ extends Control
 enum Mode {READING, WRITING, EDITING, SAVING, LOADING, PRINTING}
 
 const ALPHABET := {"a":25, "b":24, "c":23, "d":22, "e":21, "f":20, "g":19, "h":18, "i":17, "j":16, "k":15, "l":14, "m":13, "n":12, "o":11, "p":10, "q":9, "r":8, "s":7, "t":6, "u":5, "v":4, "w":3, "x":2, "y":1, "z":0}
+const SAVE_PATH := "user://last_path.txt"
 
 var _bestiary_info : Array
 var _page_index := 0
@@ -25,8 +26,18 @@ onready var _file_dialog : FileDialog = $FileDialog
 
 
 func _ready()->void:
-	_display_page.hide()
-	_page.hide()
+	var path_file := File.new()
+	if path_file.file_exists(SAVE_PATH):
+		path_file.open(SAVE_PATH, File.READ)
+		var stored_path := path_file.get_line()
+		if stored_path == "":
+			_display_page.hide()
+			_page.hide()
+		else:
+			_path = stored_path
+			_compile_master_dictionary()
+			_set_mode(Mode.READING)
+			_reload_page()
 
 
 func _input(event:InputEvent)->void:
@@ -72,6 +83,8 @@ func _input(event:InputEvent)->void:
 func _load()->void:
 	_set_mode(Mode.LOADING)
 	_file_dialog.mode = FileDialog.MODE_OPEN_FILE
+	if _path != "":
+		_file_dialog.current_path = _path
 	_file_dialog.popup()
 
 
@@ -199,14 +212,6 @@ func _remove_chars_from_string(from:String, to_remove:PoolStringArray)->String:
 	return trimmed_string
 
 
-func _on_Previous_pressed()->void:
-	_change_page(-1)
-
-
-func _on_Next_pressed():
-	_change_page(1)
-
-
 func _change_page(direction:int)->void:
 	if _bestiary_info.size() > 0:
 		_page_index += direction
@@ -256,6 +261,7 @@ func _set_mode(value:int)->void:
 			_new_page_button.disabled = true
 			_print_button.disabled = true
 			_duplicate_button.disabled = true
+	
 	$MenuButtons/SaveAs.disabled = false
 
 
@@ -289,6 +295,14 @@ func _on_New_pressed()->void:
 	_create_new()
 
 
+func _on_Previous_pressed()->void:
+	_change_page(-1)
+
+
+func _on_Next_pressed():
+	_change_page(1)
+
+
 func _on_Load_pressed()->void:
 	_load()
 
@@ -315,6 +329,10 @@ func _on_Back_pressed()->void:
 
 
 func _on_Quit_pressed()->void:
+	var path_file := File.new()
+	path_file.open(SAVE_PATH, File.WRITE)
+	path_file.store_string(_path)
+	path_file.close()
 	get_tree().quit()
 
 
